@@ -1,0 +1,8 @@
+(fp_lib_table
+  (lib (name ICs)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/ICs.pretty)(options "")(descr ""))
+  (lib (name ESP8266)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/ESP8266.pretty)(options "")(descr ""))
+  (lib (name Panellizing)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Panellizing.pretty)(options "")(descr ""))
+  (lib (name Transformers)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Transformers.pretty)(options "")(descr ""))
+  (lib (name Varistor2)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Varistor2.pretty)(options "")(descr ""))
+  (lib (name Display2)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Display2.pretty)(options "")(descr ""))
+)
