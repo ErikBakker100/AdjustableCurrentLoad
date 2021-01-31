@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 2
+Sheet 2 3
 Title "Control_Panel"
 Date "2021-01-28"
 Rev "V0.9"
@@ -24,19 +24,6 @@ F 1 "PCF8574" H 5100 4100 50  0000 C CNN
 F 2 "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" H 5100 3950 50  0001 C CNN
 F 3 "http://www.nxp.com/documents/data_sheet/PCF8574_PCF8574A.pdf" H 5100 3950 50  0001 C CNN
 	1    5100 3950
-	1    0    0    -1  
-$EndComp
-$Comp
-L OPL-Switch:Switch_6x6_SMT SW?
-U 1 1 6035A431
-P 5750 4600
-AR Path="/6035A431" Ref="SW?"  Part="1" 
-AR Path="/60357CC4/6035A431" Ref="SW1"  Part="1" 
-F 0 "SW1" H 5750 4300 50  0000 C CNN
-F 1 "Switch_6x6_SMT" H 5750 4840 50  0001 C CNN
-F 2 "Switches:SW_SPST_6x6x20mm_SMD" V 5750 4600 50  0001 C CNN
-F 3 "~" V 5750 4600 50  0001 C CNN
-	1    5750 4600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -105,19 +92,6 @@ Connection ~ 5750 4400
 Wire Wire Line
 	5750 4400 5850 4400
 Connection ~ 5750 3550
-$Comp
-L OPL-Switch:Switch_6x6_SMT SW?
-U 1 1 6035A457
-P 6000 4600
-AR Path="/6035A457" Ref="SW?"  Part="1" 
-AR Path="/60357CC4/6035A457" Ref="SW2"  Part="1" 
-F 0 "SW2" H 6000 4300 50  0000 C CNN
-F 1 "Switch_6x6_SMT" H 6000 4840 50  0001 C CNN
-F 2 "Switches:SW_SPST_6x6x20mm_SMD" V 6000 4600 50  0001 C CNN
-F 3 "~" V 6000 4600 50  0001 C CNN
-	1    6000 4600
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5900 4400 6000 4400
 Wire Wire Line
@@ -193,8 +167,6 @@ Wire Wire Line
 Wire Wire Line
 	6400 4400 6400 4450
 Wire Wire Line
-	5650 4750 5650 4850
-Wire Wire Line
 	5650 4850 5850 4850
 Wire Wire Line
 	6600 4850 6600 4750
@@ -213,18 +185,12 @@ Wire Wire Line
 Connection ~ 6150 4850
 Wire Wire Line
 	6150 4850 6350 4850
-Wire Wire Line
-	6100 4750 6100 4850
 Connection ~ 6100 4850
 Wire Wire Line
 	6100 4850 6150 4850
-Wire Wire Line
-	5900 4750 5900 4850
 Connection ~ 5900 4850
 Wire Wire Line
 	5900 4850 6100 4850
-Wire Wire Line
-	5850 4750 5850 4850
 Connection ~ 5850 4850
 Wire Wire Line
 	5850 4850 5900 4850
@@ -746,4 +712,38 @@ F 3 "" H 4600 4050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 4600 4050
+Wire Wire Line
+	6100 4750 6100 4850
+Wire Wire Line
+	5900 4750 5900 4850
+$Comp
+L OPL-Switch:Switch_6x6_SMT SW?
+U 1 1 6035A457
+P 6000 4600
+AR Path="/6035A457" Ref="SW?"  Part="1" 
+AR Path="/60357CC4/6035A457" Ref="SW2"  Part="1" 
+F 0 "SW2" H 6000 4300 50  0000 C CNN
+F 1 "Switch_6x6_SMT" H 6000 4840 50  0001 C CNN
+F 2 "Switches:SW_SPST_6x6x20mm_SMD" V 6000 4600 50  0001 C CNN
+F 3 "~" V 6000 4600 50  0001 C CNN
+	1    6000 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 4750 5650 4850
+Wire Wire Line
+	5850 4750 5850 4850
+$Comp
+L OPL-Switch:Switch_6x6_SMT SW?
+U 1 1 6035A431
+P 5750 4600
+AR Path="/6035A431" Ref="SW?"  Part="1" 
+AR Path="/60357CC4/6035A431" Ref="SW1"  Part="1" 
+F 0 "SW1" H 5750 4300 50  0000 C CNN
+F 1 "Switch_6x6_SMT" H 5750 4840 50  0001 C CNN
+F 2 "Switches:SW_SPST_6x6x20mm_SMD" V 5750 4600 50  0001 C CNN
+F 3 "~" V 5750 4600 50  0001 C CNN
+	1    5750 4600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

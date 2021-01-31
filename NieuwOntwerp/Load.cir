@@ -1,0 +1,106 @@
+.title KiCad schematic
+.include "C:\Users\Erik\Documents\Elektronika\2021\AdjustableCurrentLoad\Spice\Lib\IRF840.lib"
+U7 GND GND SDA SCL +3V3 GND Net-_C19-Pad2_ Net-_C19-Pad1_ LM358
+C19 Net-_C19-Pad1_ Net-_C19-Pad2_ 100n
+R20 Net-_C19-Pad1_ SHUNT 10R
+R21 Net-_C19-Pad2_ GND 10R
+C16 GND +3V3 100n
+R9 SCL +3V3 4K7
+R10 SDA +3V3 4K7
+C14 GND +3V3 100n
+C11 GND +3V3 100n
+R18 GND SHUNT 0R002
+J2 LOAD GND Conn_01x02
+R3 Net-_D1-Pad1_ GND 270R
+D1 Net-_D1-Pad1_ Net-_D1-Pad2_ LED
+U3 Net-_R16-Pad1_ Net-_R4-Pad1_ Net-_U10-Pad1_ GND +10V LM358
+R2 +3V3 /RTS 10k
+U1 +3V3 THERM /RTS ~INT NC_01 NC_02 Net-_D1-Pad2_ +3V3 GND NC_03 NC_04 /DTR SDA SCL Net-_J3-Pad2_ Net-_J3-Pad1_ NC_05 NC_06 NC_07 NC_08 NC_09 NC_10 ESP12E
+J3 Net-_J3-Pad1_ Net-_J3-Pad2_ /DTR /RTS GND Conn_01x05
+Q1 Net-_C18-Pad2_ LOAD SHUNT irf840
+R16 Net-_R16-Pad1_ Net-_C18-Pad2_ 470R
+C18 GND Net-_C18-Pad2_ 100n
+R19 Net-_C18-Pad2_ SHUNT 100k
+Q2 Net-_C20-Pad2_ LOAD SHUNT irf840
+R22 Net-_R16-Pad1_ Net-_C20-Pad2_ 470R
+C20 GND Net-_C20-Pad2_ 100n
+R23 Net-_C20-Pad2_ SHUNT 100k
+HS1 Heatsink
+HS2 Heatsink
+TH1 +3V3 THERM 10k_NTC
+TH2 +3V3 THERM 10k_NTC
+R1 THERM GND 5k6
+C10 GND +3V3 100n
+J4 SCL ~INT SDA Conn_01x03
+J5 +3V3 GND Conn_01x02
+D2 NEUTRAL Net-_C1-Pad1_ Net-_C2-Pad1_ Net-_C2-Pad2_ DB207S
+RV1 Net-_C5-Pad2_ NEUTRAL 10D431K
+F1 Net-_C5-Pad2_ LINE 0,3Amp
+J1 LINE Earth NEUTRAL Conn_01x02
+C2 Net-_C2-Pad1_ Net-_C2-Pad2_ 4,7uF/400V
+C3 Net-_C3-Pad1_ Net-_C3-Pad2_ 6,8uF/400V
+U2 Net-_C6-Pad1_ Net-_U2-Pad2_ Net-_D3-Pad2_ Net-_C3-Pad2_ Net-_C3-Pad2_ Net-_C3-Pad2_ Net-_C3-Pad2_ LNK364D
+U4 Net-_R12-Pad1_ Net-_C12-Pad1_ Net-_U2-Pad2_ Net-_C6-Pad1_ PC817
+C6 Net-_C6-Pad1_ Net-_C3-Pad2_ 100nF/50V
+R15 Net-_C12-Pad2_ GND 6K8
+C4 Net-_C3-Pad1_ Net-_C4-Pad2_ 1nF/300V
+R8 Net-_C3-Pad1_ Net-_C4-Pad2_ 100k
+H1 GND MountingHole_Pad
+U5 Net-_C12-Pad1_ Net-_C12-Pad2_ GND TL431
+C12 Net-_C12-Pad1_ Net-_C12-Pad2_ 100nF
+R13 Net-_R12-Pad1_ Net-_C12-Pad1_ 1K
+R14 +10V Net-_C12-Pad2_ 22k
+R5 Net-_C1-Pad1_ Net-_C5-Pad2_ 10R
+C1 Net-_C1-Pad1_ NEUTRAL X2 100nF/275V
+R7 Net-_C4-Pad2_ Net-_D3-Pad1_ 300R
+D3 Net-_D3-Pad1_ Net-_D3-Pad2_ FR107
+D4 Net-_C8-Pad1_ Net-_D4-Pad2_ SS34
+C8 Net-_C8-Pad1_ NC_11 1000uF/25V
+R12 Net-_R12-Pad1_ Net-_C8-Pad1_ 150
+C15 +10V GND 10nF
+L2 Net-_C8-Pad1_ +10V 3,3uH
+C13 +10V NC_12 100uF/25V
+C9 Net-_C8-Pad1_ Net-_C9-Pad2_ 470pF/50V
+R11 Net-_C9-Pad2_ Net-_D4-Pad2_ 18R
+H2 GND MountingHole_Pad
+H3 GND MountingHole_Pad
+H4 GND MountingHole_Pad
+L1 Net-_C2-Pad1_ Net-_C2-Pad2_ Net-_C3-Pad2_ Net-_C3-Pad1_ 6mH
+T1 Net-_C3-Pad1_ Net-_D3-Pad2_ GND Net-_D4-Pad2_ EE13
+U6 GND +3V3 +10V LM1117-3.3
+U10 Net-_U10-Pad1_ GND +3V3 SDA SCL GND MCP4725A0
+C5 Earth Net-_C5-Pad2_ Y type 2N2/250VAC
+C7 NEUTRAL Earth Y type 2N2/250VAC
+C17 Earth GND X type 470pF
+RV2 Net-_R16-Pad1_ Net-_R4-Pad1_ Net-_R4-Pad1_ 10K
+R4 Net-_R4-Pad1_ GND 2K2
+U9 GNDA GNDA GNDA Net-_R24-Pad2_ Net-_R25-Pad2_ Net-_R26-Pad2_ Net-_R27-Pad2_ GNDA Net-_D8-Pad2_ Net-_D7-Pad2_ Net-_D6-Pad2_ Net-_D5-Pad2_ Net-_J6-Pad2_ /Front/SCL /Front/SDA VDC PCF8574
+R24 VDC Net-_R24-Pad2_ 10k
+R25 VDC Net-_R25-Pad2_ 10k
+R26 VDC Net-_R26-Pad2_ 10k
+R27 VDC Net-_R27-Pad2_ 10k
+SW3 Net-_R26-Pad2_ Net-_R26-Pad2_ GNDA GNDA Switch_6x6_SMT
+SW4 Net-_R27-Pad2_ Net-_R27-Pad2_ GNDA GNDA Switch_6x6_SMT
+R28 Net-_D5-Pad1_ GNDA 270R
+D5 Net-_D5-Pad1_ Net-_D5-Pad2_ LED
+R29 Net-_D6-Pad1_ GNDA 270R
+D6 Net-_D6-Pad1_ Net-_D6-Pad2_ LED
+R30 Net-_D7-Pad1_ GNDA 270R
+D7 Net-_D7-Pad1_ Net-_D7-Pad2_ LED
+R31 Net-_D8-Pad1_ GNDA 270R
+D8 Net-_D8-Pad1_ Net-_D8-Pad2_ LED
+J6 /Front/SCL Net-_J6-Pad2_ /Front/SDA Conn_01x03
+J7 VDC GNDA Conn_01x02
+U8 GNDA VDC /Front/SCL /Front/SDA SSD1306
+H9 GNDA MountingHole_Pad
+H10 GNDA MountingHole_Pad
+H11 GNDA MountingHole_Pad
+H12 GNDA MountingHole_Pad
+C21 GNDA VDC 100n
+C22 GNDA VDC 100n
+R32 VDC Net-_J6-Pad2_ 10k
+SW2 Net-_R25-Pad2_ Net-_R25-Pad2_ GNDA GNDA Switch_6x6_SMT
+SW1 Net-_R24-Pad2_ Net-_R24-Pad2_ GNDA GNDA Switch_6x6_SMT
+V1 LINE NEUTRAL sin(0 230 50)
+.tran 1u 1m 
+.end
