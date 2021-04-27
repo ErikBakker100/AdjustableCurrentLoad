@@ -5,4 +5,7 @@
   (lib (name Transformers)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Transformers.pretty)(options "")(descr ""))
   (lib (name Varistor2)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Varistor2.pretty)(options "")(descr ""))
   (lib (name Display2)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Display2.pretty)(options "")(descr ""))
+  (lib (name Diode2)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Diode2.pretty)(options "")(descr ""))
+  (lib (name Mechanisch)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Mechanisch.pretty)(options "")(descr ""))
+  (lib (name Package-SOT)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Package-SOT.pretty)(options "")(descr ""))
 )
