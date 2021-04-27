@@ -968,16 +968,14 @@ Wire Wire Line
 $Comp
 L Device:R R2
 U 1 1 6015AC04
-P 1200 1050
-F 0 "R2" H 1000 1100 50  0000 L CNN
-F 1 "10k" V 1200 1000 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 1130 1050 50  0001 C CNN
-F 3 "~" H 1200 1050 50  0001 C CNN
-	1    1200 1050
+P 900 3450
+F 0 "R2" H 700 3500 50  0000 L CNN
+F 1 "330K" V 900 3350 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 830 3450 50  0001 C CNN
+F 3 "~" H 900 3450 50  0001 C CNN
+	1    900  3450
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1200 1200 1200 1350
 Wire Wire Line
 	1350 1150 1350 900 
 Connection ~ 1350 900 
@@ -1478,15 +1476,7 @@ Wire Notes Line
 	4400 2450 11050 2450
 Wire Notes Line
 	4400 4700 11050 4700
-Wire Notes Line
-	600  3050 2900 3050
-Wire Notes Line
-	2900 3050 2900 4550
-Wire Notes Line
-	2900 4550 600  4550
-Wire Notes Line
-	600  4550 600  3050
-Text Notes 1550 3800 0    50   ~ 0
+Text Notes 650  3150 0    50   ~ 0
 VOLT Measure
 Wire Wire Line
 	8850 3800 8700 3800
@@ -1754,4 +1744,62 @@ Wire Wire Line
 	5450 1200 5450 1300
 Connection ~ 5450 1200
 Connection ~ 6300 1700
+$Comp
+L Device:R R?
+U 1 1 6088EF1E
+P 900 3750
+F 0 "R?" H 700 3800 50  0000 L CNN
+F 1 "10k" V 900 3650 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 830 3750 50  0001 C CNN
+F 3 "~" H 900 3750 50  0001 C CNN
+	1    900  3750
+	1    0    0    -1  
+$EndComp
+Text GLabel 1200 3600 2    50   Input ~ 0
+ADC
+Text GLabel 1350 1250 0    50   Input ~ 0
+ADC
+$Comp
+L Device:D_Zener D?
+U 1 1 6088FDD6
+P 1100 3750
+F 0 "D?" V 1000 3750 50  0000 L CNN
+F 1 "3V" V 1200 3750 50  0000 L CNN
+F 2 "" H 1100 3750 50  0001 C CNN
+F 3 "~" H 1100 3750 50  0001 C CNN
+	1    1100 3750
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60890C03
+P 900 3900
+F 0 "#PWR?" H 900 3650 50  0001 C CNN
+F 1 "GND" H 905 3727 50  0000 C CNN
+F 2 "" H 900 3900 50  0001 C CNN
+F 3 "" H 900 3900 50  0001 C CNN
+	1    900  3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 3600 1100 3600
+Connection ~ 900  3600
+Connection ~ 1100 3600
+Wire Wire Line
+	1100 3600 900  3600
+Text GLabel 1200 3300 2    50   Input ~ 0
+LOAD
+Wire Wire Line
+	1200 3300 900  3300
+Wire Wire Line
+	1100 3900 900  3900
+Connection ~ 900  3900
+Wire Notes Line
+	600  3050 1500 3050
+Wire Notes Line
+	1500 3050 1500 4150
+Wire Notes Line
+	1500 4150 600  4150
+Wire Notes Line
+	600  3050 600  4150
 $EndSCHEMATC
