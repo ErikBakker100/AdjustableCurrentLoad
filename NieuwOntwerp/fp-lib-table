@@ -8,4 +8,5 @@
   (lib (name Diode2)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Diode2.pretty)(options "")(descr ""))
   (lib (name Mechanisch)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Mechanisch.pretty)(options "")(descr ""))
   (lib (name Package-SOT)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Package-SOT.pretty)(options "")(descr ""))
+  (lib (name Thermistor)(type KiCad)(uri ${NAS_LIB}/kicad-footprints/Thermistor.pretty)(options "")(descr ""))
 )
