@@ -210,17 +210,6 @@ F 3 "" H 6100 1300 50  0001 C CNN
 	1    6100 1300
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GNDA #PWR042
-U 1 1 60370CB6
-P 3100 2800
-F 0 "#PWR042" H 3100 2550 50  0001 C CNN
-F 1 "GNDA" H 3105 2627 50  0000 C CNN
-F 2 "" H 3100 2800 50  0001 C CNN
-F 3 "" H 3100 2800 50  0001 C CNN
-	1    3100 2800
-	1    0    0    -1  
-$EndComp
 Text Label 6250 1500 0    50   ~ 0
 SCL
 Text Label 6250 1600 0    50   ~ 0
@@ -467,8 +456,6 @@ Wire Notes Line
 	5650 900  900  900 
 Text Notes 950  1000 0    50   ~ 0
 Front
-Wire Notes Line
-	10000 3450 8550 3450
 Text Notes 5950 2550 0    50   ~ 0
 Mounting
 Wire Notes Line
@@ -491,19 +478,6 @@ F 2 "Connector2:JST_XH_B2B-XH-AM_1x02_P2.50mm_Vertical" H 8750 1400 50  0001 C C
 F 3 "~" H 8750 1400 50  0001 C CNN
 	1    8750 1400
 	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 607060D9
-P 8950 1500
-AR Path="/607060D9" Ref="#PWR?"  Part="1" 
-AR Path="/60357CC4/607060D9" Ref="#PWR049"  Part="1" 
-F 0 "#PWR049" H 8950 1250 50  0001 C CNN
-F 1 "GND" H 8955 1327 50  0000 C CNN
-F 2 "" H 8950 1500 50  0001 C CNN
-F 3 "" H 8950 1500 50  0001 C CNN
-	1    8950 1500
-	1    0    0    -1  
 $EndComp
 Text GLabel 8950 1400 2    50   Input ~ 0
 LOAD
@@ -558,82 +532,6 @@ F 3 "~" H 9700 1600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x03 J?
-U 1 1 607060F8
-P 8950 2600
-AR Path="/607060F8" Ref="J?"  Part="1" 
-AR Path="/60357CC4/607060F8" Ref="J7"  Part="1" 
-F 0 "J7" H 9150 2600 50  0000 C CNN
-F 1 "Conn_01x03" H 8868 2826 50  0000 C CNN
-F 2 "Connector2:JST_XH_B3B-XH-AM_1x03_P2.50mm_Vertical" H 8950 2600 50  0001 C CNN
-F 3 "~" H 8950 2600 50  0001 C CNN
-	1    8950 2600
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J?
-U 1 1 607060FE
-P 8950 3050
-AR Path="/607060FE" Ref="J?"  Part="1" 
-AR Path="/60357CC4/607060FE" Ref="J8"  Part="1" 
-F 0 "J8" H 9150 3000 50  0000 C CNN
-F 1 "Conn_01x02" H 8868 3176 50  0000 C CNN
-F 2 "Connector2:JST_XH_B2B-XH-AM_1x02_P2.50mm_Vertical" H 8950 3050 50  0001 C CNN
-F 3 "~" H 8950 3050 50  0001 C CNN
-	1    8950 3050
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	9150 3050 9400 3050
-Wire Wire Line
-	9150 3150 9400 3150
-Wire Wire Line
-	9150 2500 9350 2500
-Wire Wire Line
-	9150 2700 9350 2700
-Wire Wire Line
-	9150 2600 9600 2600
-Text GLabel 9350 2500 2    50   Input ~ 0
-SCL
-Text GLabel 9350 2700 2    50   Input ~ 0
-SDA
-$Comp
-L power:+3.3V #PWR?
-U 1 1 6070610B
-P 9400 3050
-AR Path="/6070610B" Ref="#PWR?"  Part="1" 
-AR Path="/60357CC4/6070610B" Ref="#PWR050"  Part="1" 
-F 0 "#PWR050" H 9400 2900 50  0001 C CNN
-F 1 "+3.3V" H 9415 3223 50  0000 C CNN
-F 2 "" H 9400 3050 50  0001 C CNN
-F 3 "" H 9400 3050 50  0001 C CNN
-	1    9400 3050
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 60706111
-P 9400 3150
-AR Path="/60706111" Ref="#PWR?"  Part="1" 
-AR Path="/60357CC4/60706111" Ref="#PWR051"  Part="1" 
-F 0 "#PWR051" H 9400 2900 50  0001 C CNN
-F 1 "GND" H 9405 2977 50  0000 C CNN
-F 2 "" H 9400 3150 50  0001 C CNN
-F 3 "" H 9400 3150 50  0001 C CNN
-	1    9400 3150
-	1    0    0    -1  
-$EndComp
-Wire Notes Line
-	8550 2200 10000 2200
-Wire Notes Line
-	10000 2200 10000 3450
-Wire Notes Line
-	8550 3450 8550 2200
-Text Notes 8600 2300 0    50   ~ 0
-Connectors to Front Panel
-Text GLabel 9600 2600 2    50   Input ~ 0
-~INT
-$Comp
 L Connector:Conn_01x09_Male J5
 U 1 1 608A7010
 P 4700 1900
@@ -655,8 +553,8 @@ L Device:R R?
 U 1 1 60AAA1E7
 P 3800 1300
 AR Path="/60AAA1E7" Ref="R?"  Part="1" 
-AR Path="/60357CC4/60AAA1E7" Ref="R?"  Part="1" 
-F 0 "R?" H 3750 1500 50  0000 L CNN
+AR Path="/60357CC4/60AAA1E7" Ref="R45"  Part="1" 
+F 0 "R45" H 3750 1500 50  0000 L CNN
 F 1 "10k" V 3800 1200 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 3730 1300 50  0001 C CNN
 F 3 "~" H 3800 1300 50  0001 C CNN
@@ -668,8 +566,8 @@ L Device:R R?
 U 1 1 60AAA1ED
 P 3950 1300
 AR Path="/60AAA1ED" Ref="R?"  Part="1" 
-AR Path="/60357CC4/60AAA1ED" Ref="R?"  Part="1" 
-F 0 "R?" H 3900 1500 50  0000 L CNN
+AR Path="/60357CC4/60AAA1ED" Ref="R46"  Part="1" 
+F 0 "R46" H 3900 1500 50  0000 L CNN
 F 1 "10k" V 3950 1200 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 3880 1300 50  0001 C CNN
 F 3 "~" H 3950 1300 50  0001 C CNN
@@ -681,8 +579,8 @@ L Device:R R?
 U 1 1 60AAA1F3
 P 4100 1300
 AR Path="/60AAA1F3" Ref="R?"  Part="1" 
-AR Path="/60357CC4/60AAA1F3" Ref="R?"  Part="1" 
-F 0 "R?" H 4050 1500 50  0000 L CNN
+AR Path="/60357CC4/60AAA1F3" Ref="R55"  Part="1" 
+F 0 "R55" H 4050 1500 50  0000 L CNN
 F 1 "10k" V 4100 1200 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 4030 1300 50  0001 C CNN
 F 3 "~" H 4100 1300 50  0001 C CNN
@@ -694,8 +592,8 @@ L Device:R R?
 U 1 1 60AAA1F9
 P 4250 1300
 AR Path="/60AAA1F9" Ref="R?"  Part="1" 
-AR Path="/60357CC4/60AAA1F9" Ref="R?"  Part="1" 
-F 0 "R?" H 4200 1500 50  0000 L CNN
+AR Path="/60357CC4/60AAA1F9" Ref="R56"  Part="1" 
+F 0 "R56" H 4200 1500 50  0000 L CNN
 F 1 "10k" V 4250 1200 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 4180 1300 50  0001 C CNN
 F 3 "~" H 4250 1300 50  0001 C CNN
@@ -790,4 +688,15 @@ Wire Wire Line
 	4450 2200 4500 2200
 Connection ~ 3800 1900
 NoConn ~ 4500 2300
+$Comp
+L power:GND #PWR0103
+U 1 1 60A05EBE
+P 8950 1500
+F 0 "#PWR0103" H 8950 1250 50  0001 C CNN
+F 1 "GND" H 8955 1327 50  0000 C CNN
+F 2 "" H 8950 1500 50  0001 C CNN
+F 3 "" H 8950 1500 50  0001 C CNN
+	1    8950 1500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -1223,7 +1223,7 @@ AR Path="/60760226" Ref="J2"  Part="1"
 AR Path="/60357CC4/60760226" Ref="J?"  Part="1" 
 F 0 "J2" H 7200 1350 50  0000 C CNN
 F 1 "Conn_01x02" H 7350 1750 50  0001 C CNN
-F 2 "Connector2:JST_XH_B2B-XH-AM_1x02_P2.50mm_Vertical" H 7200 1650 50  0001 C CNN
+F 2 "Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical" H 7200 1650 50  0001 C CNN
 F 3 "~" H 7200 1650 50  0001 C CNN
 	1    7200 1650
 	1    0    0    1   
@@ -1285,7 +1285,7 @@ Connection ~ 6700 1150
 Wire Wire Line
 	6600 1450 6800 1450
 Connection ~ 6600 1450
-Text GLabel 7350 2200 2    50   Input ~ 0
+Text GLabel 7950 1900 2    50   Input ~ 0
 FAN_TACH
 $Comp
 L Amplifier_Operational:LM358 U3
@@ -1361,7 +1361,7 @@ Wire Notes Line
 Wire Notes Line
 	4400 2300 7800 2300
 Wire Notes Line
-	7800 2300 7800 650 
+	8450 2300 8450 650 
 Wire Notes Line
 	7800 650  4400 650 
 Text Notes 4450 750  0    50   ~ 0
@@ -1587,8 +1587,6 @@ Wire Wire Line
 	6800 1450 6950 1450
 Connection ~ 6800 1450
 Wire Wire Line
-	7000 1750 7000 2100
-Wire Wire Line
 	4850 1600 5450 1600
 Connection ~ 5450 1600
 Wire Wire Line
@@ -1619,8 +1617,8 @@ L Device:D_Zener D1
 U 1 1 6088FDD6
 P 1100 3750
 F 0 "D1" V 1000 3750 50  0000 L CNN
-F 1 "3V" V 1200 3750 50  0000 L CNN
-F 2 "Diode_SMD:D_SMA" H 1100 3750 50  0001 C CNN
+F 1 "BZT52C-3V6" V 1300 3650 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 1100 3750 50  0001 C CNN
 F 3 "~" H 1100 3750 50  0001 C CNN
 	1    1100 3750
 	0    1    1    0   
@@ -1844,13 +1842,13 @@ Connection ~ 2400 3650
 Wire Wire Line
 	2400 3650 2400 3700
 Wire Wire Line
-	6600 2100 7000 2100
+	6600 2100 6700 2100
 $Comp
-L Device:Q_NMOS_GSD Q?
+L Device:Q_NMOS_GSD Q6
 U 1 1 609EE83B
 P 3200 3650
-F 0 "Q?" H 3404 3696 50  0000 L CNN
-F 1 "Si2306" H 3150 3900 50  0000 L CNN
+F 0 "Q6" H 3404 3696 50  0000 L CNN
+F 1 "Si2306" H 3000 3500 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 3400 3750 50  0001 C CNN
 F 3 "~" H 3200 3650 50  0001 C CNN
 	1    3200 3650
@@ -1879,52 +1877,43 @@ Wire Notes Line
 Wire Notes Line
 	1750 4300 3800 4300
 $Comp
-L Connector_Generic:Conn_01x02 J?
+L Connector_Generic:Conn_01x02 J10
 U 1 1 60A56CFA
 P 7200 1150
-AR Path="/60A56CFA" Ref="J?"  Part="1" 
+AR Path="/60A56CFA" Ref="J10"  Part="1" 
 AR Path="/60357CC4/60A56CFA" Ref="J?"  Part="1" 
-F 0 "J?" H 7400 1100 50  0000 C CNN
-F 1 "Conn_01x02" H 7118 1276 50  0000 C CNN
+F 0 "J10" H 7200 1250 50  0000 C CNN
+F 1 "Conn_01x02" H 7118 1276 50  0001 C CNN
 F 2 "Connector2:JST_XH_B2B-XH-AM_1x02_P2.50mm_Vertical" H 7200 1150 50  0001 C CNN
 F 3 "~" H 7200 1150 50  0001 C CNN
 	1    7200 1150
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R43
 U 1 1 60A70C52
-P 7300 2050
-F 0 "R?" H 7100 2100 50  0000 L CNN
-F 1 "4K7" V 7300 2000 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 7230 2050 50  0001 C CNN
-F 3 "~" H 7300 2050 50  0001 C CNN
-	1    7300 2050
-	-1   0    0    1   
+P 7100 2000
+F 0 "R43" V 7200 2050 50  0000 L CNN
+F 1 "10K" V 7100 1950 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7030 2000 50  0001 C CNN
+F 3 "~" H 7100 2000 50  0001 C CNN
+	1    7100 2000
+	0    -1   -1   0   
 $EndComp
 $Comp
-L power:+3.3V #PWR?
+L power:+3.3V #PWR0101
 U 1 1 60A70C58
-P 7300 1900
-F 0 "#PWR?" H 7300 1750 50  0001 C CNN
-F 1 "+3.3V" H 7450 2000 50  0000 C CNN
-F 2 "" H 7300 1900 50  0001 C CNN
-F 3 "" H 7300 1900 50  0001 C CNN
-	1    7300 1900
+P 7350 2000
+F 0 "#PWR0101" H 7350 1850 50  0001 C CNN
+F 1 "+3.3V" H 7350 2150 50  0000 C CNN
+F 2 "" H 7350 2000 50  0001 C CNN
+F 3 "" H 7350 2000 50  0001 C CNN
+	1    7350 2000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7350 2200 7300 2200
-Wire Wire Line
-	6750 1550 6750 2200
-Connection ~ 7300 2200
-Wire Wire Line
-	7300 2200 6750 2200
-Wire Wire Line
 	6800 1150 7000 1150
 Connection ~ 6800 1150
-Wire Wire Line
-	6750 1550 7000 1550
 Wire Wire Line
 	6950 1450 6950 1250
 Wire Wire Line
@@ -1932,4 +1921,147 @@ Wire Wire Line
 Connection ~ 6950 1450
 Wire Wire Line
 	6950 1450 7000 1450
+$Comp
+L Device:R R44
+U 1 1 60A04DE5
+P 7800 1900
+F 0 "R44" V 7650 1950 50  0000 L CNN
+F 1 "4K7" V 7800 1850 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7730 1900 50  0001 C CNN
+F 3 "~" H 7800 1900 50  0001 C CNN
+	1    7800 1900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7350 2000 7250 2000
+$Comp
+L power:GND #PWR0102
+U 1 1 60A47FC5
+P 6600 2100
+F 0 "#PWR0102" H 6600 1850 50  0001 C CNN
+F 1 "GND" H 6605 1927 50  0000 C CNN
+F 2 "" H 6600 2100 50  0001 C CNN
+F 3 "" H 6600 2100 50  0001 C CNN
+	1    6600 2100
+	1    0    0    -1  
+$EndComp
+Connection ~ 6600 2100
+Wire Wire Line
+	6950 1550 6950 2000
+Wire Wire Line
+	6950 1550 7000 1550
+Wire Wire Line
+	7000 1750 6700 1750
+Wire Wire Line
+	6700 1750 6700 2100
+Wire Wire Line
+	7650 1900 7600 1900
+Wire Wire Line
+	7500 1900 7500 2100
+Wire Wire Line
+	7500 2100 6950 2100
+Wire Wire Line
+	6950 2100 6950 2000
+Connection ~ 6950 2000
+Wire Wire Line
+	6700 2100 6800 2100
+Wire Wire Line
+	6800 2100 6800 2200
+Wire Wire Line
+	6800 2200 7600 2200
+Connection ~ 6700 2100
+Text Notes 7300 1250 0    50   ~ 0
+GND
+Text Notes 7300 1150 0    50   ~ 0
+PWM
+$Comp
+L Device:D_Zener D7
+U 1 1 609FA542
+P 7600 2050
+F 0 "D7" V 7700 1900 50  0000 L CNN
+F 1 "BZT52C-3V6" V 7700 2050 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 7600 2050 50  0001 C CNN
+F 3 "~" H 7600 2050 50  0001 C CNN
+	1    7600 2050
+	0    1    1    0   
+$EndComp
+Connection ~ 7600 1900
+Wire Wire Line
+	7600 1900 7500 1900
+Wire Notes Line
+	6850 6650 5400 6650
+$Comp
+L Connector_Generic:Conn_01x03 J?
+U 1 1 60A1B349
+P 5800 5800
+AR Path="/60A1B349" Ref="J?"  Part="1" 
+AR Path="/60357CC4/60A1B349" Ref="J?"  Part="1" 
+F 0 "J?" H 6000 5800 50  0000 C CNN
+F 1 "Conn_01x03" H 5718 6026 50  0000 C CNN
+F 2 "Connector2:JST_XH_B3B-XH-AM_1x03_P2.50mm_Vertical" H 5800 5800 50  0001 C CNN
+F 3 "~" H 5800 5800 50  0001 C CNN
+	1    5800 5800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 60A1B34F
+P 5800 6250
+AR Path="/60A1B34F" Ref="J?"  Part="1" 
+AR Path="/60357CC4/60A1B34F" Ref="J?"  Part="1" 
+F 0 "J?" H 6000 6200 50  0000 C CNN
+F 1 "Conn_01x02" H 5718 6376 50  0000 C CNN
+F 2 "Connector2:JST_XH_B2B-XH-AM_1x02_P2.50mm_Vertical" H 5800 6250 50  0001 C CNN
+F 3 "~" H 5800 6250 50  0001 C CNN
+	1    5800 6250
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 6250 6250 6250
+Wire Wire Line
+	6000 6350 6250 6350
+Wire Wire Line
+	6000 5700 6200 5700
+Wire Wire Line
+	6000 5900 6200 5900
+Wire Wire Line
+	6000 5800 6450 5800
+Text GLabel 6200 5700 2    50   Input ~ 0
+SCL
+Text GLabel 6200 5900 2    50   Input ~ 0
+SDA
+$Comp
+L power:+3.3V #PWR?
+U 1 1 60A1B35C
+P 6250 6250
+AR Path="/60A1B35C" Ref="#PWR?"  Part="1" 
+AR Path="/60357CC4/60A1B35C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6250 6100 50  0001 C CNN
+F 1 "+3.3V" H 6265 6423 50  0000 C CNN
+F 2 "" H 6250 6250 50  0001 C CNN
+F 3 "" H 6250 6250 50  0001 C CNN
+	1    6250 6250
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	5400 5400 6850 5400
+Wire Notes Line
+	6850 5400 6850 6650
+Wire Notes Line
+	5400 6650 5400 5400
+Text Notes 5450 5500 0    50   ~ 0
+Connectors to Front Panel
+Text GLabel 6450 5800 2    50   Input ~ 0
+~INT
+$Comp
+L power:GND #PWR?
+U 1 1 60A1B367
+P 6250 6350
+F 0 "#PWR?" H 6250 6100 50  0001 C CNN
+F 1 "GND" H 6255 6177 50  0000 C CNN
+F 2 "" H 6250 6350 50  0001 C CNN
+F 3 "" H 6250 6350 50  0001 C CNN
+	1    6250 6350
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
