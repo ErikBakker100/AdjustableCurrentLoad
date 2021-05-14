@@ -1285,7 +1285,7 @@ Connection ~ 6700 1150
 Wire Wire Line
 	6600 1450 6800 1450
 Connection ~ 6600 1450
-Text GLabel 7350 2200 2    50   Input ~ 0
+Text GLabel 7950 1900 2    50   Input ~ 0
 FAN_TACH
 $Comp
 L Amplifier_Operational:LM358 U3
@@ -1361,7 +1361,7 @@ Wire Notes Line
 Wire Notes Line
 	4400 2300 7800 2300
 Wire Notes Line
-	7800 2300 7800 650 
+	8450 2300 8450 650 
 Wire Notes Line
 	7800 650  4400 650 
 Text Notes 4450 750  0    50   ~ 0
@@ -1586,8 +1586,6 @@ Wire Wire Line
 Wire Wire Line
 	6800 1450 6950 1450
 Connection ~ 6800 1450
-Wire Wire Line
-	7000 1750 7000 2100
 Wire Wire Line
 	4850 1600 5450 1600
 Connection ~ 5450 1600
@@ -1844,7 +1842,7 @@ Connection ~ 2400 3650
 Wire Wire Line
 	2400 3650 2400 3700
 Wire Wire Line
-	6600 2100 7000 2100
+	6600 2100 6700 2100
 $Comp
 L Device:Q_NMOS_GSD Q?
 U 1 1 609EE83B
@@ -1894,37 +1892,28 @@ $EndComp
 $Comp
 L Device:R R?
 U 1 1 60A70C52
-P 7300 2050
-F 0 "R?" H 7100 2100 50  0000 L CNN
-F 1 "4K7" V 7300 2000 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 7230 2050 50  0001 C CNN
-F 3 "~" H 7300 2050 50  0001 C CNN
-	1    7300 2050
-	-1   0    0    1   
+P 7100 2000
+F 0 "R?" V 7200 2050 50  0000 L CNN
+F 1 "10K" V 7100 1950 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7030 2000 50  0001 C CNN
+F 3 "~" H 7100 2000 50  0001 C CNN
+	1    7100 2000
+	0    -1   -1   0   
 $EndComp
 $Comp
 L power:+3.3V #PWR?
 U 1 1 60A70C58
-P 7300 1900
-F 0 "#PWR?" H 7300 1750 50  0001 C CNN
-F 1 "+3.3V" H 7450 2000 50  0000 C CNN
-F 2 "" H 7300 1900 50  0001 C CNN
-F 3 "" H 7300 1900 50  0001 C CNN
-	1    7300 1900
+P 7350 2000
+F 0 "#PWR?" H 7350 1850 50  0001 C CNN
+F 1 "+3.3V" H 7500 2100 50  0000 C CNN
+F 2 "" H 7350 2000 50  0001 C CNN
+F 3 "" H 7350 2000 50  0001 C CNN
+	1    7350 2000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7350 2200 7300 2200
-Wire Wire Line
-	6750 1550 6750 2200
-Connection ~ 7300 2200
-Wire Wire Line
-	7300 2200 6750 2200
-Wire Wire Line
 	6800 1150 7000 1150
 Connection ~ 6800 1150
-Wire Wire Line
-	6750 1550 7000 1550
 Wire Wire Line
 	6950 1450 6950 1250
 Wire Wire Line
@@ -1932,4 +1921,65 @@ Wire Wire Line
 Connection ~ 6950 1450
 Wire Wire Line
 	6950 1450 7000 1450
+$Comp
+L Device:R R?
+U 1 1 60A04DE5
+P 7800 1900
+F 0 "R?" H 7600 1950 50  0000 L CNN
+F 1 "4K7" V 7800 1850 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7730 1900 50  0001 C CNN
+F 3 "~" H 7800 1900 50  0001 C CNN
+	1    7800 1900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7350 2000 7250 2000
+$Comp
+L power:GND #PWR?
+U 1 1 60A47FC5
+P 6600 2100
+F 0 "#PWR?" H 6600 1850 50  0001 C CNN
+F 1 "GND" H 6605 1927 50  0000 C CNN
+F 2 "" H 6600 2100 50  0001 C CNN
+F 3 "" H 6600 2100 50  0001 C CNN
+	1    6600 2100
+	1    0    0    -1  
+$EndComp
+Connection ~ 6600 2100
+Wire Wire Line
+	6950 1550 6950 2000
+Wire Wire Line
+	6950 1550 7000 1550
+Wire Wire Line
+	7000 1750 6700 1750
+Wire Wire Line
+	6700 1750 6700 2100
+$Comp
+L Device:D_Zener D?
+U 1 1 60A2F1AD
+P 7650 2050
+F 0 "D?" V 7604 2130 50  0000 L CNN
+F 1 "D_Zener" V 7695 2130 50  0000 L CNN
+F 2 "" H 7650 2050 50  0001 C CNN
+F 3 "~" H 7650 2050 50  0001 C CNN
+	1    7650 2050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7650 1900 7500 1900
+Wire Wire Line
+	7500 1900 7500 2100
+Wire Wire Line
+	7500 2100 6950 2100
+Wire Wire Line
+	6950 2100 6950 2000
+Connection ~ 7650 1900
+Connection ~ 6950 2000
+Wire Wire Line
+	6700 2100 6800 2100
+Wire Wire Line
+	6800 2100 6800 2200
+Wire Wire Line
+	6800 2200 7650 2200
+Connection ~ 6700 2100
 $EndSCHEMATC
