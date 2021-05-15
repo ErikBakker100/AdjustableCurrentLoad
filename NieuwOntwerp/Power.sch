@@ -1074,8 +1074,6 @@ F 3 "~" H 3150 4750 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3150 4600 3400 4600
-Wire Wire Line
-	3150 4900 3400 4900
 $Comp
 L power:+12V #PWR060
 U 1 1 607269F0
@@ -1091,11 +1089,7 @@ Connection ~ 3150 4600
 Wire Notes Line
 	650  4300 650  5200
 Wire Notes Line
-	650  5200 3700 5200
-Wire Notes Line
-	3700 5200 3700 4300
-Wire Notes Line
-	3700 4300 650  4300
+	4650 5200 4650 4300
 Text Notes 700  4400 0    50   ~ 0
 Decoupling
 $Comp
@@ -1152,4 +1146,40 @@ F 3 "" H 1300 5550 50  0001 C CNN
 	1    1300 5550
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:C C?
+U 1 1 60A477DA
+P 3700 4750
+AR Path="/60A477DA" Ref="C?"  Part="1" 
+AR Path="/60357CC4/60A477DA" Ref="C?"  Part="1" 
+AR Path="/606C5EA7/60A477DA" Ref="C35"  Part="1" 
+F 0 "C35" H 3650 4650 50  0000 R CNN
+F 1 "100n" H 3650 4850 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 3738 4600 50  0001 C CNN
+F 3 "~" H 3700 4750 50  0001 C CNN
+	1    3700 4750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3700 4900 3400 4900
+Connection ~ 3400 4900
+$Comp
+L power:+5V #PWR042
+U 1 1 60A4B909
+P 3700 4600
+F 0 "#PWR042" H 3700 4450 50  0001 C CNN
+F 1 "+5V" H 3715 4773 50  0000 C CNN
+F 2 "" H 3700 4600 50  0001 C CNN
+F 3 "" H 3700 4600 50  0001 C CNN
+	1    3700 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 4900 3400 4900
+Wire Notes Line
+	650  4300 4650 4300
+Wire Wire Line
+	3150 4900 3400 4900
+Wire Notes Line
+	650  5200 4650 5200
 $EndSCHEMATC
