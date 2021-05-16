@@ -932,8 +932,6 @@ Connection ~ 3400 1350
 Wire Wire Line
 	3150 1450 3700 1450
 Connection ~ 3700 1450
-Wire Wire Line
-	1200 900  1350 900 
 $Comp
 L Device:R R1
 U 1 1 6015AC04
@@ -947,7 +945,6 @@ F 3 "~" H 900 3450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1350 1150 1350 900 
-Connection ~ 1350 900 
 Wire Wire Line
 	1300 1900 1300 1750
 Wire Wire Line
