@@ -1,0 +1,21 @@
+Circuit: * C:\Users\eebak\Documents\Elektronica\2021\AdjustableLoad\Simulatie\FanControl.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Fri Sep 10 17:27:46 2021
+Total elapsed time: 0.031 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2091
+traniter = 2088
+tranpoints = 1045
+accept = 1045
+rejected = 0
+matrix size = 6
+fillins = 0
+solver = Normal
+Matrix Compiler1: 110 bytes object code size  0.0/0.0/[0.0]
+Matrix Compiler2: 346 bytes object code size  0.0/0.1/[0.0]
+

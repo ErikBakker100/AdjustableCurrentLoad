@@ -20,12 +20,12 @@ P 2450 2000
 AR Path="/606FC0D3" Ref="D?"  Part="1" 
 AR Path="/60357CC4/606FC0D3" Ref="D?"  Part="1" 
 AR Path="/606C5EA7/606FC0D3" Ref="D12"  Part="1" 
-F 0 "D12" V 2250 2150 50  0000 L CNN
-F 1 "DB207S" V 2450 1850 50  0000 L CNN
+F 0 "D12" H 2600 2200 50  0000 L CNN
+F 1 "DB207S" H 2300 2000 50  0000 L CNN
 F 2 "Diode2:SOT4_Rectifier_Bridge" H 2450 2000 50  0001 C CNN
 F 3 "~" H 2450 2000 50  0001 C CNN
 	1    2450 2000
-	0    1    1    0   
+	1    0    0    -1  
 $EndComp
 $Comp
 L Device:Varistor RV?
@@ -139,7 +139,7 @@ AR Path="/606FC106" Ref="R?"  Part="1"
 AR Path="/60357CC4/606FC106" Ref="R?"  Part="1" 
 AR Path="/606C5EA7/606FC106" Ref="R54"  Part="1" 
 F 0 "R54" H 5900 2650 50  0000 C CNN
-F 1 "6K8" V 6000 2650 50  0000 C CNN
+F 1 "5K6" V 6000 2650 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 5930 2650 50  0001 C CNN
 F 3 "~" H 6000 2650 50  0001 C CNN
 	1    6000 2650
@@ -168,7 +168,7 @@ AR Path="/60357CC4/606FC112" Ref="R?"  Part="1"
 AR Path="/606C5EA7/606FC112" Ref="R49"  Part="1" 
 F 0 "R49" H 3950 1400 50  0000 C CNN
 F 1 "8k6" V 3900 1200 50  0000 C CNN
-F 2 "Resistor_SMD:R_1210_3225Metric" V 3830 1200 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical" V 3830 1200 50  0001 C CNN
 F 3 "~" H 3900 1200 50  0001 C CNN
 	1    3900 1200
 	1    0    0    -1  
@@ -238,7 +238,7 @@ AR Path="/606FC133" Ref="U?"  Part="1"
 AR Path="/60357CC4/606FC133" Ref="U?"  Part="1" 
 AR Path="/606C5EA7/606FC133" Ref="U11"  Part="1" 
 F 0 "U11" V 5700 2400 50  0000 R CNN
-F 1 "TL431" V 5450 2300 50  0000 R CNN
+F 1 "TL432" V 5450 2300 50  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 5550 2150 50  0001 C CIN
 F 3 "http://www.ti.com/lit/ds/symlink/tl431.pdf" H 5550 2300 50  0001 C CIN
 	1    5550 2300
@@ -330,8 +330,8 @@ AR Path="/606FC15C" Ref="R?"  Part="1"
 AR Path="/60357CC4/606FC15C" Ref="R?"  Part="1" 
 AR Path="/606C5EA7/606FC15C" Ref="R48"  Part="1" 
 F 0 "R48" H 3900 1450 50  0000 C CNN
-F 1 "300R" V 3800 1500 50  0000 C CNN
-F 2 "Resistor_SMD:R_1210_3225Metric" V 3730 1500 50  0001 C CNN
+F 1 "330R" V 3800 1500 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical" V 3730 1500 50  0001 C CNN
 F 3 "~" H 3800 1500 50  0001 C CNN
 	1    3800 1500
 	1    0    0    -1  
@@ -349,20 +349,6 @@ F 2 "Diode_SMD:D_SMA" H 3800 1800 50  0001 C CNN
 F 3 "~" H 3800 1800 50  0001 C CNN
 	1    3800 1800
 	0    1    1    0   
-$EndComp
-$Comp
-L Device:D D?
-U 1 1 606FC168
-P 5100 1200
-AR Path="/606FC168" Ref="D?"  Part="1" 
-AR Path="/60357CC4/606FC168" Ref="D?"  Part="1" 
-AR Path="/606C5EA7/606FC168" Ref="D14"  Part="1" 
-F 0 "D14" H 5200 1150 50  0000 C CNN
-F 1 "SS34" H 5150 1300 50  0000 C CNN
-F 2 "Diode_SMD:D_SMA" H 5100 1200 50  0001 C CNN
-F 3 "~" H 5100 1200 50  0001 C CNN
-	1    5100 1200
-	-1   0    0    1   
 $EndComp
 $Comp
 L Device:C_Polarized C?
@@ -386,7 +372,7 @@ AR Path="/606FC174" Ref="R?"  Part="1"
 AR Path="/60357CC4/606FC174" Ref="R?"  Part="1" 
 AR Path="/606C5EA7/606FC174" Ref="R51"  Part="1" 
 F 0 "R51" H 5450 1750 50  0000 C CNN
-F 1 "150" V 5550 1750 50  0000 C CNN
+F 1 "1K2" V 5550 1750 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 5480 1750 50  0001 C CNN
 F 3 "~" H 5550 1750 50  0001 C CNN
 	1    5550 1750
@@ -466,10 +452,7 @@ Connection ~ 5550 2200
 Wire Wire Line
 	6000 1200 6000 1600
 Wire Wire Line
-	6000 1900 6000 2500
-Wire Wire Line
 	5650 2500 5650 2300
-Connection ~ 6000 2500
 Wire Wire Line
 	5700 2800 6000 2800
 Wire Wire Line
@@ -491,9 +474,6 @@ $EndComp
 Connection ~ 6000 2800
 Wire Wire Line
 	5650 2500 5800 2500
-Connection ~ 5800 2500
-Wire Wire Line
-	5800 2500 6000 2500
 Wire Wire Line
 	5550 2200 5800 2200
 Connection ~ 5800 2200
@@ -576,7 +556,7 @@ F 1 "6mH" H 3100 2540 50  0000 C CNN
 F 2 "Transformers:UU98_Common_Mode_Choke" H 3100 2350 50  0001 C CNN
 F 3 "~" H 3100 2350 50  0001 C CNN
 	1    3100 2350
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	3300 2450 3300 2700
@@ -602,7 +582,7 @@ Wire Wire Line
 	2900 2000 2750 2000
 Connection ~ 2750 2000
 $Comp
-L Device:Transformer_1P_1S T?
+L Device:Transformer_1P_SS T?
 U 1 1 606FC1E3
 P 4450 1400
 AR Path="/606FC1E3" Ref="T?"  Part="1" 
@@ -610,10 +590,10 @@ AR Path="/60357CC4/606FC1E3" Ref="T?"  Part="1"
 AR Path="/606C5EA7/606FC1E3" Ref="T1"  Part="1" 
 F 0 "T1" H 4450 1000 50  0000 C CNN
 F 1 "EE13" H 4450 1100 50  0000 C CNN
-F 2 "Transformers:EE13Horizontal" H 4450 1400 50  0001 C CNN
+F 2 "Transformers:EE16-A2" H 4450 1400 50  0001 C CNN
 F 3 "~" H 4450 1400 50  0001 C CNN
 	1    4450 1400
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	4900 1500 4900 1600
@@ -692,9 +672,9 @@ P 1400 1850
 AR Path="/606FC20C" Ref="C?"  Part="1" 
 AR Path="/60357CC4/606FC20C" Ref="C?"  Part="1" 
 AR Path="/606C5EA7/606FC20C" Ref="C16"  Part="1" 
-F 0 "C16" H 1300 1750 50  0000 L CNN
+F 0 "C16" H 1250 1750 50  0000 L CNN
 F 1 "Y type 2N2/250VAC" H 1050 1350 50  0000 L CNN
-F 2 "Condensator:JN_102M" H 1438 1700 50  0001 C CNN
+F 2 "Condensator:Y2_222" H 1438 1700 50  0001 C CNN
 F 3 "~" H 1400 1850 50  0001 C CNN
 	1    1400 1850
 	-1   0    0    1   
@@ -706,9 +686,9 @@ P 1400 2150
 AR Path="/606FC212" Ref="C?"  Part="1" 
 AR Path="/60357CC4/606FC212" Ref="C?"  Part="1" 
 AR Path="/606C5EA7/606FC212" Ref="C17"  Part="1" 
-F 0 "C17" H 1300 2250 50  0000 L CNN
+F 0 "C17" H 1250 2050 50  0000 L CNN
 F 1 "Y type 2N2/250VAC" H 1150 2400 50  0000 L CNN
-F 2 "Condensator:JN_102M" H 1438 2000 50  0001 C CNN
+F 2 "Condensator:Y2_222" H 1438 2000 50  0001 C CNN
 F 3 "~" H 1400 2150 50  0001 C CNN
 	1    1400 2150
 	-1   0    0    1   
@@ -745,9 +725,9 @@ P 6550 1650
 AR Path="/606FC226" Ref="C?"  Part="1" 
 AR Path="/60357CC4/606FC226" Ref="C?"  Part="1" 
 AR Path="/606C5EA7/606FC226" Ref="C34"  Part="1" 
-F 0 "C34" H 6500 1550 50  0000 C CNN
+F 0 "C34" H 6450 1550 50  0000 C CNN
 F 1 "X type 470pF" H 6350 1750 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 6588 1500 50  0001 C CNN
+F 2 "Condensator:JN_102M" H 6588 1500 50  0001 C CNN
 F 3 "~" H 6550 1650 50  0001 C CNN
 	1    6550 1650
 	-1   0    0    1   
@@ -841,20 +821,6 @@ F 3 "" H 6000 1200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C?
-U 1 1 6072697B
-P 1550 4750
-AR Path="/6072697B" Ref="C?"  Part="1" 
-AR Path="/60357CC4/6072697B" Ref="C?"  Part="1" 
-AR Path="/606C5EA7/6072697B" Ref="C18"  Part="1" 
-F 0 "C18" H 1500 4650 50  0000 R CNN
-F 1 "100n" H 1500 4850 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 1588 4600 50  0001 C CNN
-F 3 "~" H 1550 4750 50  0001 C CNN
-	1    1550 4750
-	-1   0    0    1   
-$EndComp
-$Comp
 L power:+3.3V #PWR?
 U 1 1 60726981
 P 1550 4600
@@ -882,20 +848,6 @@ F 1 "100n" H 1250 4850 50  0000 R CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric" H 1338 4600 50  0001 C CNN
 F 3 "~" H 1300 4750 50  0001 C CNN
 	1    1300 4750
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 60726994
-P 1050 4750
-AR Path="/60726994" Ref="C?"  Part="1" 
-AR Path="/60357CC4/60726994" Ref="C?"  Part="1" 
-AR Path="/606C5EA7/60726994" Ref="C14"  Part="1" 
-F 0 "C14" H 1000 4650 50  0000 R CNN
-F 1 "100n" H 1000 4850 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 1088 4600 50  0001 C CNN
-F 3 "~" H 1050 4750 50  0001 C CNN
-	1    1050 4750
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -1002,22 +954,10 @@ Connection ~ 2400 4600
 Wire Wire Line
 	2700 4900 2400 4900
 Connection ~ 2400 4900
-Wire Wire Line
-	800  4600 1050 4600
-Connection ~ 1050 4600
-Wire Wire Line
-	1050 4600 1300 4600
 Connection ~ 1300 4600
 Wire Wire Line
 	1300 4600 1550 4600
-Wire Wire Line
-	800  4900 1050 4900
-Connection ~ 1050 4900
-Wire Wire Line
-	1050 4900 1300 4900
 Connection ~ 1300 4900
-Wire Wire Line
-	1300 4900 1550 4900
 Connection ~ 1550 4600
 $Comp
 L power:+12V #PWR053
@@ -1046,20 +986,6 @@ Wire Wire Line
 	2650 4600 2700 4600
 $Comp
 L Device:C C?
-U 1 1 607269E2
-P 3400 4750
-AR Path="/607269E2" Ref="C?"  Part="1" 
-AR Path="/60357CC4/607269E2" Ref="C?"  Part="1" 
-AR Path="/606C5EA7/607269E2" Ref="C25"  Part="1" 
-F 0 "C25" H 3350 4650 50  0000 R CNN
-F 1 "100n" H 3350 4850 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 3438 4600 50  0001 C CNN
-F 3 "~" H 3400 4750 50  0001 C CNN
-	1    3400 4750
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:C C?
 U 1 1 607269E8
 P 3150 4750
 AR Path="/607269E8" Ref="C?"  Part="1" 
@@ -1072,8 +998,6 @@ F 3 "~" H 3150 4750 50  0001 C CNN
 	1    3150 4750
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	3150 4600 3400 4600
 $Comp
 L power:+12V #PWR060
 U 1 1 607269F0
@@ -1085,7 +1009,6 @@ F 3 "" H 3150 4600 50  0001 C CNN
 	1    3150 4600
 	1    0    0    -1  
 $EndComp
-Connection ~ 3150 4600
 Wire Notes Line
 	650  4300 650  5200
 Wire Notes Line
@@ -1129,10 +1052,7 @@ Connection ~ 3150 4900
 Connection ~ 2700 4900
 Wire Wire Line
 	2400 4900 1800 4900
-Connection ~ 1550 4900
 Connection ~ 1800 4900
-Wire Wire Line
-	1800 4900 1550 4900
 Wire Wire Line
 	1550 4600 1800 4600
 $Comp
@@ -1140,7 +1060,7 @@ L power:+5V #PWR056
 U 1 1 60905992
 P 1300 5550
 F 0 "#PWR056" H 1300 5400 50  0001 C CNN
-F 1 "+5V" H 1315 5723 50  0000 C CNN
+F 1 "+5V" H 1300 5700 50  0000 C CNN
 F 2 "" H 1300 5550 50  0001 C CNN
 F 3 "" H 1300 5550 50  0001 C CNN
 	1    1300 5550
@@ -1160,9 +1080,6 @@ F 3 "~" H 3700 4750 50  0001 C CNN
 	1    3700 4750
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	3700 4900 3400 4900
-Connection ~ 3400 4900
 $Comp
 L power:+5V #PWR042
 U 1 1 60A4B909
@@ -1174,12 +1091,120 @@ F 3 "" H 3700 4600 50  0001 C CNN
 	1    3700 4600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3250 4900 3400 4900
 Wire Notes Line
 	650  4300 4650 4300
-Wire Wire Line
-	3150 4900 3400 4900
 Wire Notes Line
 	650  5200 4650 5200
+$Comp
+L Device:D D?
+U 1 1 606FC168
+P 5100 1200
+AR Path="/606FC168" Ref="D?"  Part="1" 
+AR Path="/60357CC4/606FC168" Ref="D?"  Part="1" 
+AR Path="/606C5EA7/606FC168" Ref="D14"  Part="1" 
+F 0 "D14" H 5200 1150 50  0000 C CNN
+F 1 "SS34" H 5150 1300 50  0000 C CNN
+F 2 "Diode_SMD:D_SMA" H 5100 1200 50  0001 C CNN
+F 3 "~" H 5100 1200 50  0001 C CNN
+	1    5100 1200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	800  4900 1300 4900
+Wire Wire Line
+	800  4600 1300 4600
+Wire Wire Line
+	1300 4900 1800 4900
+$Comp
+L Device:D_Zener D8
+U 1 1 60B9BEA9
+P 6300 2650
+F 0 "D8" V 6254 2730 50  0000 L CNN
+F 1 "BZT52C-5V1" V 6345 2730 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-123" H 6300 2650 50  0001 C CNN
+F 3 "~" H 6300 2650 50  0001 C CNN
+	1    6300 2650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60B9DA60
+P 6300 2350
+AR Path="/60B9DA60" Ref="R?"  Part="1" 
+AR Path="/60357CC4/60B9DA60" Ref="R?"  Part="1" 
+AR Path="/606C5EA7/60B9DA60" Ref="R57"  Part="1" 
+F 0 "R57" H 6400 2500 50  0000 C CNN
+F 1 "1K2" V 6300 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6230 2350 50  0001 C CNN
+F 3 "~" H 6300 2350 50  0001 C CNN
+	1    6300 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 4900 3700 4900
+Wire Wire Line
+	6000 2800 6300 2800
+Wire Wire Line
+	6300 2500 6550 2500
+Connection ~ 6300 2500
+$Comp
+L power:+5V #PWR049
+U 1 1 60BA73DE
+P 6550 2500
+F 0 "#PWR049" H 6550 2350 50  0001 C CNN
+F 1 "+5V" H 6565 2673 50  0000 C CNN
+F 2 "" H 6550 2500 50  0001 C CNN
+F 3 "" H 6550 2500 50  0001 C CNN
+	1    6550 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 60BA8016
+P 6300 2200
+AR Path="/60357CC4/60BA8016" Ref="#PWR?"  Part="1" 
+AR Path="/606C5EA7/60BA8016" Ref="#PWR023"  Part="1" 
+F 0 "#PWR023" H 6300 2050 50  0001 C CNN
+F 1 "+12V" H 6315 2373 50  0000 C CNN
+F 2 "" H 6300 2200 50  0001 C CNN
+F 3 "" H 6300 2200 50  0001 C CNN
+	1    6300 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 611F7C58
+P 6100 2350
+AR Path="/611F7C58" Ref="R?"  Part="1" 
+AR Path="/60357CC4/611F7C58" Ref="R?"  Part="1" 
+AR Path="/606C5EA7/611F7C58" Ref="R?"  Part="1" 
+F 0 "R?" H 6150 2500 50  0000 C CNN
+F 1 "0R" V 6100 2350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6030 2350 50  0001 C CNN
+F 3 "~" H 6100 2350 50  0001 C CNN
+	1    6100 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 2500 6100 2500
+Wire Wire Line
+	6100 2200 6000 2200
+Wire Wire Line
+	6000 2200 6000 2450
+Wire Wire Line
+	6000 2450 5950 2450
+Wire Wire Line
+	5950 2450 5950 2500
+Wire Wire Line
+	5950 2500 5800 2500
+Connection ~ 5800 2500
+Wire Wire Line
+	6000 1900 6000 2200
+Connection ~ 6000 2200
+Text Notes 5500 3150 0    50   ~ 0
+* Let op: ondersteboven monteren
+Text Notes 5600 2300 0    50   ~ 0
+*
+Text Notes 1700 1550 0    50   ~ 0
+Moet meer vermogen zijn
 $EndSCHEMATC

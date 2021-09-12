@@ -1,0 +1,7 @@
+(sym_lib_table
+  (lib (name ICs)(type Legacy)(uri ${NAS_LIB}/kicad-symbols/ICs.lib)(options "")(descr ""))
+  (lib (name ESP8266)(type Legacy)(uri ${NAS_LIB}/kicad-symbols/ESP8266.lib)(options "")(descr ""))
+  (lib (name Display2)(type Legacy)(uri ${NAS_LIB}/kicad-symbols/Display2.lib)(options "")(descr ""))
+  (lib (name OPL-Switch)(type Legacy)(uri ${NAS_LIB}/kicad-symbols/OPL-Switch.lib)(options "")(descr ""))
+  (lib (name "Transistor_(MOS)FET")(type Legacy)(uri "${NAS_LIB}/kicad-symbols/Transistor_(MOS)FET.lib")(options "")(descr ""))
+)
