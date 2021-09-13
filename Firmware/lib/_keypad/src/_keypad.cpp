@@ -33,20 +33,20 @@ String msg{};
 
 */
 
-_Keypad::Keypad() {
-     pcf8574 = &PCF8574(PCF8574_Address, PCF8574_Interrupt_Pin, keyPressedOnPCF8574);
-     pcf8574->begin();
+_Keypad::_Keypad() {
+//     pcf8574 = &PCF8574(PCF8574_Address, PCF8574_Interrupt_Pin, keyPressedOnPCF8574);
+//     pcf8574->begin();
 }
 
 void _Keypad::pin_mode(byte pinNum, byte mode);
 {
-    pcf8574->pinMode(pinNum, mode);
+//    pcf8574->pinMode(pinNum, mode);
 }
 void _Keypad::pin_write(byte pinNum, boolean level);
 {
-    pcf8574->digitalWrite(pinNum, level);
+//    pcf8574->digitalWrite(pinNum, level);
 }
 int _Keypad::pin_read(byte pinNum);
 {
-    return pcf8574->digitalRead(pinNum);
+//    return pcf8574->digitalRead(pinNum);
 }
