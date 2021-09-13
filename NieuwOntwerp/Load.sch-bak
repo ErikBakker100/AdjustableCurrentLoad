@@ -2109,8 +2109,6 @@ Text Notes 7100 2850 0    50   ~ 0
 4V
 Text Notes 7050 2650 0    50   ~ 0
 900 Ohm = minimale snelheid = 8V
-Text Notes 7600 1400 0    50   ~ 0
-Draait net andersom
 $Comp
 L Device:R R?
 U 1 1 613D9C79

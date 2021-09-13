@@ -14,4 +14,3 @@ char keys[ROWS][COLS] = {
 byte rowPins[ROWS] = {4, 3, 2, 1}; //connect to the row pinouts of the kpd
 byte colPins[COLS] = {8, 7, 6, 5}; //connect to the column pinouts of the kpd
 
-
