@@ -17,9 +17,23 @@
 * pin 16 = GPIO16 = D0
 */
 
+// declare variables for keypad
+const byte ROWS = 4; //four rows
+const byte COLS = 4; //three columns
+char keys[ROWS][COLS] = {
+    {'1', '2', '3', 'U'},
+    {'4', '5', '6', 'D'},
+    {'7', '8', '9', '*'},
+    {60, '0', 62, '#'}};
+byte rowpins[ROWS] = {4, 3, 2, 1}; //connect to the row pinouts of the kbd
+byte colpins[COLS] = {8, 7, 6, 5}; //connect to the column pinouts of the kbd
+// declare variables for PCF8574
+const uint8_t PCF8574_Interrupt_Pin{16};
+const uint8_t PCF8574_Address{0x20};
+// declare others
 #define FAN_OVERRIDE 12
 tacho FanSpeed();
-_Keypad keypad();
+_Keypad keypad(makeKeymap(keys), rowpins, colpins, ROWS, COLS, PCF8574_Address, PCF8574_Interrupt_Pin);
 
 void check_if_exist_I2C();
 
@@ -42,10 +56,10 @@ void loop() {
   digitalWrite(LED_BUILTIN, LOW);  // turn the LED off by making the voltage LOW
   delay(500);                     // wait
 //  outputinfo(String("Fan speed : "+ FanSpeed.rpm())+"rpm\r");
-//  char key = keypad.getKey();
+  char key = keypad.getKey();
   if (keyPressed){
     keyPressed = false;
-    outputinfo("KEY\r\n");
+    outputinfo("KEY" + String(key) + "\r\n");
   }
 }
 

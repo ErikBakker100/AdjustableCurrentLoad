@@ -33,7 +33,8 @@ String msg{};
 
 */
 
-_Keypad::_Keypad() : Keypad(makeKeymap(keys), rowpins, colpins, ROWS, COLS), PCF8574(PCF8574_Address, PCF8574_Interrupt_Pin, keyPressedOnPCF8574) {
+_Keypad::_Keypad(char *userKeymap, byte *row, byte *col, byte numRows, byte numCols, uint8_t address, uint8_t interruptPin) : Keypad(makeKeymap(userKeymap), row, col, numRows, numCols), PCF8574(address, interruptPin, keyPressedOnPCF8574)
+{
     PCF8574::begin();
 }
 
