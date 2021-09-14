@@ -33,20 +33,25 @@ String msg{};
 
 */
 
-_Keypad::_Keypad() {
-//     pcf8574 = &PCF8574(PCF8574_Address, PCF8574_Interrupt_Pin, keyPressedOnPCF8574);
-//     pcf8574->begin();
+_Keypad::_Keypad() : Keypad(makeKeymap(keys), rowpins, colpins, ROWS, COLS), PCF8574(PCF8574_Address, PCF8574_Interrupt_Pin, keyPressedOnPCF8574) {
+    PCF8574::begin();
 }
 
-void _Keypad::pin_mode(byte pinNum, byte mode);
+void _Keypad::pin_mode(byte pinNum, byte mode)
 {
-//    pcf8574->pinMode(pinNum, mode);
+    PCF8574::pinMode(pinNum, mode);
 }
-void _Keypad::pin_write(byte pinNum, boolean level);
+void _Keypad::pin_write(byte pinNum, boolean level)
 {
-//    pcf8574->digitalWrite(pinNum, level);
+    PCF8574::digitalWrite(pinNum, level);
 }
-int _Keypad::pin_read(byte pinNum);
+int _Keypad::pin_read(byte pinNum)
 {
-//    return pcf8574->digitalRead(pinNum);
+    return PCF8574::digitalRead(pinNum);
+}
+
+void keyPressedOnPCF8574()
+{
+    // Interrupt called (No Serial no read no wire in this function, and DEBUG disabled on PCF library)
+    keyPressed = true;
 }

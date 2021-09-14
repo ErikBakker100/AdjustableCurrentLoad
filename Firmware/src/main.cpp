@@ -18,9 +18,8 @@
 */
 
 #define FAN_OVERRIDE 12
-tacho FanSpeed;
-
-Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS );
+tacho FanSpeed();
+_Keypad keypad();
 
 void check_if_exist_I2C();
 
