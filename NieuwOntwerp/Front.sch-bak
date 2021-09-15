@@ -128,7 +128,7 @@ Wire Wire Line
 Wire Wire Line
 	6100 1300 6400 1300
 Text Notes 6300 1800 0    50   ~ 0
-Address 0x78
+Address 0x3C
 $Comp
 L power:VDC #PWR040
 U 1 1 6036B830
@@ -378,7 +378,7 @@ Wire Notes Line
 Wire Notes Line
 	5900 2350 5900 900 
 Text Notes 1900 1250 0    50   ~ 0
-Address 0x38
+Address 0x40
 $Comp
 L Device:R R?
 U 1 1 601A616F

@@ -18,7 +18,7 @@ L Analog_ADC:INA219AxD U6
 U 1 1 60103786
 P 10350 1500
 F 0 "U6" H 10350 1500 50  0000 C CNN
-F 1 "INA219" H 10700 1850 50  0000 C CNN
+F 1 "INA219" H 10550 1900 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-8" H 11150 1150 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/symlink/ina219.pdf" H 10700 1400 50  0001 C CNN
 	1    10350 1500
@@ -539,7 +539,7 @@ F 3 "https://ww1.microchip.com/downloads/en/DeviceDoc/22039d.pdf" H 5300 3250 50
 	1    0    0    -1  
 $EndComp
 Text Notes 4700 3300 0    50   ~ 0
-Address 0xC0
+Address 0x60
 $Comp
 L power:+3.3V #PWR019
 U 1 1 60173081
@@ -1648,17 +1648,6 @@ Connection ~ 10250 2750
 Wire Wire Line
 	10250 2750 9150 2750
 $Comp
-L power:+3.3V #PWR011
-U 1 1 60907914
-P 2400 3100
-F 0 "#PWR011" H 2400 2950 50  0001 C CNN
-F 1 "+3.3V" H 2415 3273 50  0000 C CNN
-F 2 "" H 2400 3100 50  0001 C CNN
-F 3 "" H 2400 3100 50  0001 C CNN
-	1    2400 3100
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R_Potentiometer_Trim RV1
 U 1 1 60910C0C
 P 5600 1350
@@ -1669,77 +1658,8 @@ F 3 "~" H 5600 1350 50  0001 C CNN
 	1    5600 1350
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:C_Polarized C5
-U 1 1 6091AD75
-P 2400 3250
-F 0 "C5" H 2518 3296 50  0000 L CNN
-F 1 "47uF" H 2518 3205 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 2438 3100 50  0001 C CNN
-F 3 "~" H 2400 3250 50  0001 C CNN
-	1    2400 3250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2400 3400 2400 3450
-Wire Wire Line
-	2700 3850 2700 4050
-$Comp
-L Device:R R7
-U 1 1 60932743
-P 2400 3850
-F 0 "R7" H 2250 3800 50  0000 L CNN
-F 1 "56K" V 2400 3750 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2330 3850 50  0001 C CNN
-F 3 "~" H 2400 3850 50  0001 C CNN
-	1    2400 3850
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	2400 4000 2400 4050
-Wire Wire Line
-	2400 4050 2700 4050
-Text GLabel 3450 3450 2    50   Input ~ 0
+Text GLabel 3100 3300 0    50   Input ~ 0
 THERM
-$Comp
-L Device:D D3
-U 1 1 6095181F
-P 2150 3900
-F 0 "D3" V 2104 3980 50  0000 L CNN
-F 1 "1N4148" V 2250 3550 50  0000 L CNN
-F 2 "Diode2:DIO_LL4148" H 2150 3900 50  0001 C CNN
-F 3 "~" H 2150 3900 50  0001 C CNN
-	1    2150 3900
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R6
-U 1 1 60951CDD
-P 2150 3600
-F 0 "R6" H 2000 3550 50  0000 L CNN
-F 1 "1K" V 2150 3550 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2080 3600 50  0001 C CNN
-F 3 "~" H 2150 3600 50  0001 C CNN
-	1    2150 3600
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	2150 4050 2400 4050
-Connection ~ 2400 4050
-Wire Wire Line
-	2150 3450 2400 3450
-Connection ~ 2400 3450
-$Comp
-L power:GND #PWR012
-U 1 1 609602E7
-P 2400 4050
-F 0 "#PWR012" H 2400 3800 50  0001 C CNN
-F 1 "GND" H 2405 3877 50  0000 C CNN
-F 2 "" H 2400 4050 50  0001 C CNN
-F 3 "" H 2400 4050 50  0001 C CNN
-	1    2400 4050
-	1    0    0    -1  
-$EndComp
 Wire Notes Line
 	3800 2850 3800 4300
 Wire Notes Line
@@ -1747,50 +1667,20 @@ Wire Notes Line
 Text Notes 1800 2950 0    50   ~ 0
 Fan start
 $Comp
-L Device:Q_NMOS_GSD Q1
-U 1 1 609703AE
-P 2600 3650
-F 0 "Q1" H 2804 3696 50  0000 L CNN
-F 1 "Si2306" H 2550 3900 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 2800 3750 50  0001 C CNN
-F 3 "~" H 2600 3650 50  0001 C CNN
-	1    2600 3650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2400 3450 2400 3650
-Connection ~ 2400 3650
-Wire Wire Line
-	2400 3650 2400 3700
-$Comp
 L Device:Q_NMOS_GSD Q6
 U 1 1 609EE83B
 P 3200 3650
 F 0 "Q6" H 3404 3696 50  0000 L CNN
-F 1 "Si2306" H 3000 3500 50  0000 L CNN
+F 1 "Si2306" H 3400 3600 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 3400 3750 50  0001 C CNN
 F 3 "~" H 3200 3650 50  0001 C CNN
 	1    3200 3650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2700 3450 3300 3450
-Connection ~ 3300 3450
-Wire Wire Line
-	3300 3450 3450 3450
-Wire Wire Line
-	2700 4050 3300 4050
-Wire Wire Line
-	3300 4050 3300 3850
-Connection ~ 2700 4050
 Text GLabel 1350 1650 0    50   Input ~ 0
 FAN_OVERRIDE
-Text GLabel 3150 3150 2    50   Input ~ 0
+Text GLabel 2800 3650 0    50   Input ~ 0
 FAN_OVERRIDE
-Wire Wire Line
-	3150 3150 3000 3150
-Wire Wire Line
-	3000 3150 3000 3650
 Wire Notes Line
 	1750 2850 3800 2850
 Wire Notes Line
@@ -2189,4 +2079,40 @@ F 3 "" H 6850 1650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 NoConn ~ 5600 1200
+Wire Wire Line
+	2800 3650 2900 3650
+$Comp
+L power:GND #PWR?
+U 1 1 61421F15
+P 3300 3950
+F 0 "#PWR?" H 3300 3700 50  0001 C CNN
+F 1 "GND" H 3305 3777 50  0000 C CNN
+F 2 "" H 3300 3950 50  0001 C CNN
+F 3 "" H 3300 3950 50  0001 C CNN
+	1    3300 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 3300 3300 3300
+Wire Wire Line
+	3300 3300 3300 3450
+$Comp
+L Device:R R?
+U 1 1 61437740
+P 2900 3800
+F 0 "R?" H 3150 3900 50  0000 R CNN
+F 1 "100K" V 2900 3900 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2830 3800 50  0001 C CNN
+F 3 "~" H 2900 3800 50  0001 C CNN
+	1    2900 3800
+	-1   0    0    1   
+$EndComp
+Connection ~ 2900 3650
+Wire Wire Line
+	2900 3650 3000 3650
+Wire Wire Line
+	2900 3950 3300 3950
+Wire Wire Line
+	3300 3850 3300 3950
+Connection ~ 3300 3950
 $EndSCHEMATC

@@ -14,73 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Interface_Expansion:PCF8574 U?
-U 1 1 6035A425
-P 2650 1900
-AR Path="/6035A425" Ref="U?"  Part="1" 
-AR Path="/60357CC4/6035A425" Ref="U7"  Part="1" 
-F 0 "U7" H 2650 1950 50  0000 C CNN
-F 1 "PCF8574" H 2650 2050 50  0000 C CNN
-F 2 "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" H 2650 1900 50  0001 C CNN
-F 3 "http://www.nxp.com/documents/data_sheet/PCF8574_PCF8574A.pdf" H 2650 1900 50  0001 C CNN
-	1    2650 1900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 6035A437
-P 3200 1300
-AR Path="/6035A437" Ref="R?"  Part="1" 
-AR Path="/60357CC4/6035A437" Ref="R39"  Part="1" 
-F 0 "R39" H 3150 1500 50  0000 L CNN
-F 1 "10k" V 3200 1200 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 3130 1300 50  0001 C CNN
-F 3 "~" H 3200 1300 50  0001 C CNN
-	1    3200 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 6035A43D
-P 3350 1300
-AR Path="/6035A43D" Ref="R?"  Part="1" 
-AR Path="/60357CC4/6035A43D" Ref="R40"  Part="1" 
-F 0 "R40" H 3300 1500 50  0000 L CNN
-F 1 "10k" V 3350 1200 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 3280 1300 50  0001 C CNN
-F 3 "~" H 3350 1300 50  0001 C CNN
-	1    3350 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 6035A443
-P 3500 1300
-AR Path="/6035A443" Ref="R?"  Part="1" 
-AR Path="/60357CC4/6035A443" Ref="R41"  Part="1" 
-F 0 "R41" H 3450 1500 50  0000 L CNN
-F 1 "10k" V 3500 1200 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 3430 1300 50  0001 C CNN
-F 3 "~" H 3500 1300 50  0001 C CNN
-	1    3500 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 6035A449
-P 3650 1300
-AR Path="/6035A449" Ref="R?"  Part="1" 
-AR Path="/60357CC4/6035A449" Ref="R42"  Part="1" 
-F 0 "R42" H 3600 1500 50  0000 L CNN
-F 1 "10k" V 3650 1200 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 3580 1300 50  0001 C CNN
-F 3 "~" H 3650 1300 50  0001 C CNN
-	1    3650 1300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3200 1150 3350 1150
-$Comp
 L Connector_Generic:Conn_01x03 J?
 U 1 1 6035A4F2
 P 1100 1550
@@ -138,17 +71,6 @@ F 1 "VDC" H 2665 1373 50  0000 C CNN
 F 2 "" H 2650 1200 50  0001 C CNN
 F 3 "" H 2650 1200 50  0001 C CNN
 	1    2650 1200
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VDC #PWR043
-U 1 1 6036BD27
-P 3050 1150
-F 0 "#PWR043" H 3050 1050 50  0001 C CNN
-F 1 "VDC" H 3065 1323 50  0000 C CNN
-F 2 "" H 3050 1150 50  0001 C CNN
-F 3 "" H 3050 1150 50  0001 C CNN
-	1    3050 1150
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -222,11 +144,6 @@ Wire Wire Line
 	1300 1450 1500 1450
 Wire Wire Line
 	1300 1650 1500 1650
-Wire Wire Line
-	2150 1800 2150 1900
-Connection ~ 2150 1900
-Wire Wire Line
-	2150 1900 2150 2000
 Wire Wire Line
 	1300 1550 1750 1550
 Wire Wire Line
@@ -385,7 +302,7 @@ U 1 1 601A616F
 P 1900 2150
 AR Path="/601A616F" Ref="R?"  Part="1" 
 AR Path="/60357CC4/601A616F" Ref="R38"  Part="1" 
-F 0 "R38" H 1950 2200 50  0000 L CNN
+F 0 "R38" H 1900 2300 50  0000 L CNN
 F 1 "10k" V 1900 2050 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 1830 2150 50  0001 C CNN
 F 3 "~" H 1900 2150 50  0001 C CNN
@@ -444,7 +361,6 @@ F 3 "" H 2150 2000 50  0001 C CNN
 	1    2150 2000
 	1    0    0    -1  
 $EndComp
-Connection ~ 2150 2000
 Connection ~ 1150 2550
 Wire Notes Line
 	900  900  900  3200
@@ -534,160 +450,15 @@ $EndComp
 $Comp
 L Connector:Conn_01x09_Male J5
 U 1 1 608A7010
-P 4700 1900
-F 0 "J5" H 4850 2550 50  0000 C CNN
-F 1 "Conn_01x09_Male" H 4700 2450 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical" H 4700 1900 50  0001 C CNN
-F 3 "~" H 4700 1900 50  0001 C CNN
-	1    4700 1900
+P 3500 1900
+F 0 "J5" H 3650 2550 50  0000 C CNN
+F 1 "Conn_01x09_Male" H 3500 2450 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x09_P2.54mm_Vertical" H 3500 1900 50  0001 C CNN
+F 3 "~" H 3500 1900 50  0001 C CNN
+	1    3500 1900
 	-1   0    0    -1  
 $EndComp
-Connection ~ 3350 1150
-Connection ~ 3500 1150
-Wire Wire Line
-	3500 1150 3650 1150
-Wire Wire Line
-	3350 1150 3500 1150
-$Comp
-L Device:R R?
-U 1 1 60AAA1E7
-P 3800 1300
-AR Path="/60AAA1E7" Ref="R?"  Part="1" 
-AR Path="/60357CC4/60AAA1E7" Ref="R45"  Part="1" 
-F 0 "R45" H 3750 1500 50  0000 L CNN
-F 1 "10k" V 3800 1200 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 3730 1300 50  0001 C CNN
-F 3 "~" H 3800 1300 50  0001 C CNN
-	1    3800 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 60AAA1ED
-P 3950 1300
-AR Path="/60AAA1ED" Ref="R?"  Part="1" 
-AR Path="/60357CC4/60AAA1ED" Ref="R46"  Part="1" 
-F 0 "R46" H 3900 1500 50  0000 L CNN
-F 1 "10k" V 3950 1200 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 3880 1300 50  0001 C CNN
-F 3 "~" H 3950 1300 50  0001 C CNN
-	1    3950 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 60AAA1F3
-P 4100 1300
-AR Path="/60AAA1F3" Ref="R?"  Part="1" 
-AR Path="/60357CC4/60AAA1F3" Ref="R55"  Part="1" 
-F 0 "R55" H 4050 1500 50  0000 L CNN
-F 1 "10k" V 4100 1200 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 4030 1300 50  0001 C CNN
-F 3 "~" H 4100 1300 50  0001 C CNN
-	1    4100 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 60AAA1F9
-P 4250 1300
-AR Path="/60AAA1F9" Ref="R?"  Part="1" 
-AR Path="/60357CC4/60AAA1F9" Ref="R56"  Part="1" 
-F 0 "R56" H 4200 1500 50  0000 L CNN
-F 1 "10k" V 4250 1200 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 4180 1300 50  0001 C CNN
-F 3 "~" H 4250 1300 50  0001 C CNN
-	1    4250 1300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3650 1150 3800 1150
-Connection ~ 3650 1150
-Connection ~ 3800 1150
-Wire Wire Line
-	3800 1150 3950 1150
-Connection ~ 3950 1150
-Wire Wire Line
-	3950 1150 4100 1150
-Connection ~ 4100 1150
-Wire Wire Line
-	4100 1150 4250 1150
-Wire Wire Line
-	3050 1150 3200 1150
-Connection ~ 3200 1150
-Wire Wire Line
-	3150 1500 3200 1500
-Wire Wire Line
-	3200 1500 3200 1450
-Wire Wire Line
-	3150 1600 3350 1600
-Wire Wire Line
-	3350 1600 3350 1450
-Wire Wire Line
-	3150 1700 3500 1700
-Wire Wire Line
-	3500 1700 3500 1450
-Wire Wire Line
-	3150 1800 3650 1800
-Wire Wire Line
-	3650 1800 3650 1450
-Wire Wire Line
-	3150 1900 3800 1900
-Wire Wire Line
-	3800 1900 3800 1450
-Wire Wire Line
-	3150 2000 3950 2000
-Wire Wire Line
-	3950 2000 3950 1450
-Wire Wire Line
-	3150 2100 4100 2100
-Wire Wire Line
-	4100 2100 4100 2000
-Wire Wire Line
-	3150 2200 4250 2200
-Wire Wire Line
-	4250 2200 4250 1900
-Wire Wire Line
-	3200 1500 4500 1500
-Connection ~ 3200 1500
-Wire Wire Line
-	3350 1600 4500 1600
-Connection ~ 3350 1600
-Wire Wire Line
-	3500 1700 4500 1700
-Connection ~ 3500 1700
-Wire Wire Line
-	3650 1800 4500 1800
-Connection ~ 3650 1800
-Wire Wire Line
-	4250 1900 4500 1900
-Connection ~ 4250 1900
-Wire Wire Line
-	4250 1900 4250 1450
-Wire Wire Line
-	4100 2000 4500 2000
-Connection ~ 4100 2000
-Wire Wire Line
-	4100 2000 4100 1450
-Wire Wire Line
-	3950 2000 3950 2300
-Wire Wire Line
-	3950 2300 4350 2300
-Wire Wire Line
-	4350 2300 4350 2100
-Wire Wire Line
-	4350 2100 4500 2100
-Connection ~ 3950 2000
-Wire Wire Line
-	3800 1900 3800 2400
-Wire Wire Line
-	3800 2400 4450 2400
-Wire Wire Line
-	4450 2400 4450 2200
-Wire Wire Line
-	4450 2200 4500 2200
-Connection ~ 3800 1900
-NoConn ~ 4500 2300
+NoConn ~ 3300 2300
 $Comp
 L power:GND #PWR0103
 U 1 1 60A05EBE
@@ -699,4 +470,39 @@ F 3 "" H 8950 1500 50  0001 C CNN
 	1    8950 1500
 	1    0    0    -1  
 $EndComp
+Connection ~ 2150 2000
+Wire Wire Line
+	2150 1900 2150 2000
+Wire Wire Line
+	2150 1800 2150 1900
+Connection ~ 2150 1900
+$Comp
+L Interface_Expansion:PCF8574 U?
+U 1 1 6035A425
+P 2650 1900
+AR Path="/6035A425" Ref="U?"  Part="1" 
+AR Path="/60357CC4/6035A425" Ref="U7"  Part="1" 
+F 0 "U7" H 2650 1950 50  0000 C CNN
+F 1 "PCF8574" H 2650 2050 50  0000 C CNN
+F 2 "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" H 2650 1900 50  0001 C CNN
+F 3 "http://www.nxp.com/documents/data_sheet/PCF8574_PCF8574A.pdf" H 2650 1900 50  0001 C CNN
+	1    2650 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 1500 3300 1500
+Wire Wire Line
+	3150 1600 3300 1600
+Wire Wire Line
+	3150 1700 3300 1700
+Wire Wire Line
+	3150 1800 3300 1800
+Wire Wire Line
+	3150 1900 3300 1900
+Wire Wire Line
+	3150 2000 3300 2000
+Wire Wire Line
+	3150 2100 3300 2100
+Wire Wire Line
+	3150 2200 3300 2200
 $EndSCHEMATC
