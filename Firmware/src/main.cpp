@@ -23,6 +23,7 @@ const uint8_t PCF8574_Address{0x20};
 I2CKeyPad keyPad(PCF8574_Address);
 char keys[] = "147L2580369RUDERNF";  // N = Nokey, F = Fail (eg >1 keys pressed)
 volatile bool keyChange = false;  // volatile for IRQ var
+bool keypadexist{false};
 
 // IRAM_ATTR for interrupt routine
 void IRAM_ATTR keyChanged()
@@ -43,7 +44,7 @@ void setup()
 {
   Serial.begin(115200);
   while( !Serial ){ /*wait*/ }
-  delay(50);
+  delay(100);
   Serial.print("Initializing\r\n");
   Serial.println(__FILE__);
   pinMode(LED_BUILTIN, OUTPUT);
@@ -60,9 +61,9 @@ void setup()
   check_if_exist_I2C();
   if (keyPad.begin() == false)
   {
-    Serial.println("\nERROR: cannot communicate to keypad.\nPlease reboot.\n");
-    while (1);
-  }
+    Serial.println("\nERROR: cannot communicate to keypad.\r\n");
+
+  } else keypadexist = true;
   measurePolling(I2cspeed);
 
   Serial.println("Init finalised\r\n");
@@ -72,7 +73,8 @@ void loop()
 {
   if (keyChange)
   {
-    uint8_t idx = keyPad.getKey();
+    uint8_t idx {'F'};
+    if(keypadexist) idx = keyPad.getKey();
     // only after keychange is handled it is time reset the flag
     keyChange = false;
     if (idx != 16)
