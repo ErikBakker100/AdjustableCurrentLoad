@@ -1665,7 +1665,7 @@ Wire Notes Line
 Wire Notes Line
 	1750 4300 1750 2850
 Text Notes 1800 2950 0    50   ~ 0
-Fan start
+Fan start/stop
 $Comp
 L Device:Q_NMOS_GSD Q6
 U 1 1 609EE83B

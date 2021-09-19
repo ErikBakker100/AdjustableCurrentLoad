@@ -2,6 +2,7 @@
 #include "I2CKeyPad.h"
 #include "tacho.h"
 #include "display.h"
+#include "MCP4725.h"
 
 /*
 * pin number is equal to GPIO
@@ -17,28 +18,30 @@
 * pin 16 = GPIO16 = D0
 */
 
-// declare variables for PCF8574 / keypad
+// PCF8574 / keypad setup
 const uint8_t PCF8574_Interrupt_Pin{12};
 const uint8_t PCF8574_Address{0x20};
 I2CKeyPad keyPad(PCF8574_Address);
 char keys[] = "147L2580369RUDERNF";  // N = Nokey, F = Fail (eg >1 keys pressed)
 volatile bool keyChange = false;  // volatile for IRQ var
 bool keypadexist{false};
-
-// IRAM_ATTR for interrupt routine
-void IRAM_ATTR keyChanged()
+void IRAM_ATTR keyChanged() // we need IRAM_ATTR for interrupt routine on ESP12E
 {
   keyChange = true;
 }
 
-// declare help functions
+// help functions setup
 const uint32_t I2cspeed{1000000};
 void check_if_exist_I2C();
 void measurePolling(uint32_t speed);
 
-// declare FAN values
+// FAN setup
 const uint8_t FAN_OVERRIDE {16};
 tacho FanSpeed();
+
+// D/A converter (MCP4725) setup
+MCP4725 MCP(0x60);
+bool MCP4725connected = false;
 
 void setup()
 {
@@ -64,7 +67,11 @@ void setup()
     Serial.println("\nERROR: cannot communicate to keypad.\r\n");
 
   } else keypadexist = true;
-  measurePolling(I2cspeed);
+  if (keypadexist) measurePolling(I2cspeed);
+  if (MCP.begin() == false)
+  {
+    outputinfo("Could not find sensor\r\n");
+  } else MCP4725connected = true;
 
   Serial.println("Init finalised\r\n");
 }
@@ -85,6 +92,17 @@ void loop()
     else
     {
       outputinfo("release\r\n");
+    }
+  }
+  // MCP4725 Test
+  if (MCP4725connected) {
+    for (uint16_t i = 0; i < 4096; i++)
+    {
+      MCP.setValue(i);
+    }
+    for (uint16_t i = 0; i < 4096; i++)
+    {
+      MCP.setValue(4096 - i);
     }
   }
 }
