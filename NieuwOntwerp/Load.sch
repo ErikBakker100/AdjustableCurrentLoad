@@ -577,7 +577,7 @@ F 3 "" H 5550 7450 50  0001 C CNN
 	1    5550 7450
 	1    0    0    -1  
 $EndComp
-Text GLabel 1350 1450 0    50   Input ~ 0
+Text GLabel 1350 1650 0    50   Input ~ 0
 ~INT
 Wire Wire Line
 	1350 1750 1300 1750
@@ -1677,7 +1677,7 @@ F 3 "~" H 3200 3650 50  0001 C CNN
 	1    3200 3650
 	1    0    0    -1  
 $EndComp
-Text GLabel 1350 1650 0    50   Input ~ 0
+Text GLabel 1350 1450 0    50   Input ~ 0
 FAN_OVERRIDE
 Text GLabel 2800 3650 0    50   Input ~ 0
 FAN_OVERRIDE

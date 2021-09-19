@@ -9,11 +9,6 @@
 #define SCL D1
 #define SDA D2
 
-// Initialize the OLED display
-// I2C Address  0x3C
-// D1 -> SDA
-// D2 -> SCL
-
 /*
 * Nodemcu board : pin number is equal to GPIO
 * pin 1 = GPIO1 = TX
@@ -34,8 +29,6 @@
 
 void Display() {
 #ifdef DISPLAYADDRESS
-  Wire.begin(SDA, SCL);
-  Wire.setClock(1000000L);
   display.begin(&Adafruit128x64, DISPLAYADDRESS);
   display.setFont(System5x7);
   display.clear();
