@@ -19,7 +19,7 @@
 * pin 16 = GPIO16 = D0
 */
 
-// Addresses of the different devices
+// Set variables of the different devices
 const uint8_t PCF8574_Interrupt_Pin{12};
 const uint8_t PCF8574_Address{0x20}; 
 const uint32_t I2CSPEED{1000000}; // I2C bus speed
@@ -27,8 +27,10 @@ const uint8_t FAN_OVERRIDE{16}; // Output which controls the FAN
 const uint8_t MCP4725_Address{0x60};
 const uint8_t INA219_Address{0x40};
 const uint8_t SSD1306_address{0x3c};
+const uint8_t tacho_pin{14};
 // SSD1306 Display setup
 SSD1306Wire display(SSD1306_address, SDA, SCL);
+
 // PCF8574 / keypad setup
 I2CKeyPad keyPad(PCF8574_Address);
 char keys[] = "147L2580369RUDERNF";  // N = Nokey, F = Fail (eg >1 keys pressed)
@@ -36,19 +38,21 @@ volatile bool keyChange = false;  // volatile for IRQ var
 bool Keypadconnected{false};
 void IRAM_ATTR keyChanged() // we need IRAM_ATTR for interrupt routine on ESP12E
 { keyChange = true; }
+bool keypressed{false}; // Set as long as a key is being pressed
 
 // help functions setup
 void check_if_exist_I2C();
 void measurePolling(uint32_t speed);
 uint32_t stop{0}; //Used for timing
+void Screenupdate();
 
 // FAN setup
-tacho FanSpeed();
+tacho FanSpeed(tacho_pin);
 
 // D/A converter (MCP4725) setup
 MCP4725 MCP(MCP4725_Address);
 bool MCP4725connected{false};
-uint8_t output_value{0}; // the output level between - 4096, determines the load
+uint16_t output_value{0}; // the output level between - 4096, determines the load
 // INA219 Current sensor setup
 Adafruit_INA219 ina219;
 bool INA219connected{false};
@@ -73,6 +77,7 @@ void setup()
 // Initialize the display  
   display.init();
   display.resetDisplay();
+  display.flipScreenVertically();
   display.displayOn();
   display.clear();
   display.drawString(1, 1, "Start");
@@ -114,27 +119,29 @@ void loop()
    if(Keypadconnected) {
     if (keyChange)
     {
+      keypressed = true;
       uint8_t idx = keyPad.getKey();
-      // only after keychange is handled it is time reset the flag
+      // only after keychange is handled it is time to reset the flag
       keyChange = false;
       if (idx != 16)
       {
         if (keys[idx] == 'U') {
           if (MCP4725connected) {
-            output_value += 500;
-            output_value &= 0xFFF;
+            output_value += 10;
+            output_value &= 0x0FFF;
             MCP.setValue(output_value);
           }
         }
         if (keys[idx] == 'D') {
           if (MCP4725connected) {
-            output_value -= 500;
-            output_value &= 0xFFF;
+            output_value -= 10;
+            output_value &= 0x0FFF;
             MCP.setValue(output_value);
           }
         }
       } else {
         Serial.print("release\r\n");
+        keypressed = false;
       }
       Serial.printf("Key %c, output_value %d\r\n", keys[idx], output_value);
     }
@@ -143,27 +150,21 @@ void loop()
   if (INA219connected) {
     if(millis()-stop > 500) {
       stop = millis();
-      float shuntvoltage = 0;
-      float busvoltage = 0;
-      float current_mA = 0;
-      float loadvoltage = 0;
-      float power_mW = 0;
-
-      shuntvoltage = ina219.getShuntVoltage_mV();
-      busvoltage = ina219.getBusVoltage_V();
-      current_mA = ina219.getCurrent_mA();
-      power_mW = ina219.getPower_mW();
-      loadvoltage = busvoltage + (shuntvoltage / 1000);
-      
-      Serial.print("Bus Voltage:   "); Serial.print(busvoltage); Serial.println(" V");
-      Serial.print("Shunt Voltage: "); Serial.print(shuntvoltage); Serial.println(" mV");
-      Serial.print("Load Voltage:  "); Serial.print(loadvoltage); Serial.println(" V");
-      Serial.print("Current:       "); Serial.print(current_mA); Serial.println(" mA");
-      Serial.print("Power:         "); Serial.print(power_mW); Serial.println(" mW");
-      Serial.println("");
+      Screenupdate();
     }
   }
 }
+
+void Screenupdate() {
+  char buffer[40];
+  display.clear();
+  display.drawStringf(0, 0, buffer, "Voltage: %.2f V", ina219.getBusVoltage_V());
+  display.drawStringf(0, 10, buffer, "Current: %.2f mA", ina219.getCurrent_mA());
+  display.drawStringf(0, 20, buffer, "Power: %.2f mW", ina219.getPower_mW());
+  display.drawStringf(0, 30, buffer, "Fan: %d rpm", FanSpeed.rpm());
+  display.display();
+}
+
 
 void measurePolling(uint32_t speed)
 {

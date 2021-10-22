@@ -14,32 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector_Generic:Conn_01x03 J?
-U 1 1 6035A4F2
-P 1100 1550
-AR Path="/6035A4F2" Ref="J?"  Part="1" 
-AR Path="/60357CC4/6035A4F2" Ref="J3"  Part="1" 
-F 0 "J3" H 1018 1867 50  0000 C CNN
-F 1 "Conn_01x03" H 1018 1776 50  0000 C CNN
-F 2 "Connector2:JST_XH_B3B-XH-AM_1x03_P2.50mm_Vertical" H 1100 1550 50  0001 C CNN
-F 3 "~" H 1100 1550 50  0001 C CNN
-	1    1100 1550
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x02 J?
-U 1 1 6035A4F8
-P 1100 2000
-AR Path="/6035A4F8" Ref="J?"  Part="1" 
-AR Path="/60357CC4/6035A4F8" Ref="J4"  Part="1" 
-F 0 "J4" H 1018 2217 50  0000 C CNN
-F 1 "Conn_01x02" H 1018 2126 50  0000 C CNN
-F 2 "Connector2:JST_XH_B2B-XH-AM_1x02_P2.50mm_Vertical" H 1100 2000 50  0001 C CNN
-F 3 "~" H 1100 2000 50  0001 C CNN
-	1    1100 2000
-	-1   0    0    -1  
-$EndComp
-$Comp
 L Display2:SSD1306 U?
 U 1 1 6036A568
 P 6600 1150
@@ -87,29 +61,25 @@ $EndComp
 $Comp
 L power:VDC #PWR036
 U 1 1 6036C807
-P 1550 2000
-F 0 "#PWR036" H 1550 1900 50  0001 C CNN
-F 1 "VDC" H 1565 2173 50  0000 C CNN
-F 2 "" H 1550 2000 50  0001 C CNN
-F 3 "" H 1550 2000 50  0001 C CNN
-	1    1550 2000
+P 1100 1550
+F 0 "#PWR036" H 1100 1450 50  0001 C CNN
+F 1 "VDC" H 1115 1723 50  0000 C CNN
+F 2 "" H 1100 1550 50  0001 C CNN
+F 3 "" H 1100 1550 50  0001 C CNN
+	1    1100 1550
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GNDA #PWR037
 U 1 1 6036D122
-P 1550 2100
-F 0 "#PWR037" H 1550 1850 50  0001 C CNN
-F 1 "GNDA" H 1555 1927 50  0000 C CNN
-F 2 "" H 1550 2100 50  0001 C CNN
-F 3 "" H 1550 2100 50  0001 C CNN
-	1    1550 2100
+P 1100 1650
+F 0 "#PWR037" H 1100 1400 50  0001 C CNN
+F 1 "GNDA" H 1105 1477 50  0000 C CNN
+F 2 "" H 1100 1650 50  0001 C CNN
+F 3 "" H 1100 1650 50  0001 C CNN
+	1    1100 1650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1300 2000 1550 2000
-Wire Wire Line
-	1300 2100 1550 2100
 $Comp
 L power:GNDA #PWR041
 U 1 1 6036FA54
@@ -140,28 +110,6 @@ Wire Wire Line
 	6400 1600 6250 1600
 Wire Wire Line
 	6400 1500 6250 1500
-Wire Wire Line
-	1300 1450 1500 1450
-Wire Wire Line
-	1300 1650 1500 1650
-Wire Wire Line
-	1300 1550 1750 1550
-Wire Wire Line
-	1750 1550 1750 2300
-Wire Wire Line
-	1750 2300 1900 2300
-Wire Wire Line
-	1500 1450 1500 1500
-Wire Wire Line
-	1500 1500 2150 1500
-Wire Wire Line
-	1500 1600 1500 1650
-Wire Wire Line
-	1500 1600 2150 1600
-Text Label 1350 1450 0    50   ~ 0
-SCL
-Text Label 1350 1650 0    50   ~ 0
-SDA
 $Comp
 L Mechanical:MountingHole_Pad H5
 U 1 1 60390B9C
@@ -206,25 +154,9 @@ F 3 "~" H 6950 2700 50  0001 C CNN
 	1    6950 2700
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GNDA #PWR048
-U 1 1 60391EC2
-P 6500 2800
-F 0 "#PWR048" H 6500 2550 50  0001 C CNN
-F 1 "GNDA" H 6505 2627 50  0000 C CNN
-F 2 "" H 6500 2800 50  0001 C CNN
-F 3 "" H 6500 2800 50  0001 C CNN
-	1    6500 2800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6050 2800 6350 2800
 Connection ~ 6350 2800
-Wire Wire Line
-	6350 2800 6500 2800
-Connection ~ 6500 2800
-Wire Wire Line
-	6500 2800 6650 2800
 Connection ~ 6650 2800
 Wire Wire Line
 	6650 2800 6950 2800
@@ -505,4 +437,58 @@ Wire Wire Line
 	3150 2100 3300 2100
 Wire Wire Line
 	3150 2200 3300 2200
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J?
+U 1 1 6160983A
+P 1500 1550
+AR Path="/6160983A" Ref="J?"  Part="1" 
+AR Path="/60357CC4/6160983A" Ref="J3"  Part="1" 
+F 0 "J3" H 1550 1350 50  0000 C CNN
+F 1 "Din_02x03" H 1550 1750 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x03_P2.54mm_Vertical" H 1500 1550 50  0001 C CNN
+F 3 "~" H 1500 1550 50  0001 C CNN
+	1    1500 1550
+	-1   0    0    -1  
+$EndComp
+NoConn ~ 1200 1450
+Wire Wire Line
+	1100 1550 1200 1550
+Wire Wire Line
+	1100 1650 1200 1650
+Wire Wire Line
+	1700 1450 2000 1450
+Wire Wire Line
+	2000 1450 2000 1600
+Wire Wire Line
+	2000 1600 2150 1600
+Wire Wire Line
+	1700 1550 2100 1550
+Wire Wire Line
+	2100 1550 2100 1500
+Wire Wire Line
+	2100 1500 2150 1500
+Wire Wire Line
+	1700 1650 1700 2300
+Wire Wire Line
+	1700 2300 1900 2300
+Text Label 1750 1550 0    50   ~ 0
+SCL
+Text Label 1750 1450 0    50   ~ 0
+SDA
+Wire Wire Line
+	6500 2800 6650 2800
+Wire Wire Line
+	6350 2800 6500 2800
+Connection ~ 6500 2800
+$Comp
+L power:GNDA #PWR048
+U 1 1 60391EC2
+P 6500 2800
+F 0 "#PWR048" H 6500 2550 50  0001 C CNN
+F 1 "GNDA" H 6505 2627 50  0000 C CNN
+F 2 "" H 6500 2800 50  0001 C CNN
+F 3 "" H 6500 2800 50  0001 C CNN
+	1    6500 2800
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
