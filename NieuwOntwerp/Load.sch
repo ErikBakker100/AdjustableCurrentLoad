@@ -1066,13 +1066,13 @@ F 3 "~" H 7050 4050 50  0001 C CNN
 $EndComp
 $Comp
 L Amplifier_Operational:LM358 U5
-U 2 1 6011E1C0
+U 1 1 6011E1C0
 P 7000 3800
 F 0 "U5" H 6950 3800 50  0000 C CNN
 F 1 "LM358" H 7100 3950 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 7000 3800 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 7000 3800 50  0001 C CNN
-	2    7000 3800
+	1    7000 3800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1356,13 +1356,13 @@ Wire Wire Line
 Connection ~ 6700 4050
 $Comp
 L Amplifier_Operational:LM358 U5
-U 1 1 6076B910
+U 2 1 6076B910
 P 6100 3000
 F 0 "U5" H 6050 3000 50  0000 C CNN
 F 1 "LM358" H 6200 3150 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6100 3000 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 6100 3000 50  0001 C CNN
-	1    6100 3000
+	2    6100 3000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
