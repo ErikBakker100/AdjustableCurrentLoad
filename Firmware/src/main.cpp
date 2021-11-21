@@ -42,9 +42,10 @@ bool keypressed{false}; // Set as long as a key is being pressed
 
 // help functions setup
 void check_if_exist_I2C();
+byte check_if_exist_I2C(uint8_t);
 void measurePolling(uint32_t speed);
 uint32_t stop{0}; //Used for timing
-void Screenupdate();
+void WriteINAdata();
 
 // FAN setup
 tacho FanSpeed(tacho_pin);
@@ -74,14 +75,16 @@ void setup()
   Wire.begin();
   Wire.setClock(I2CSPEED);
   check_if_exist_I2C();
-// Initialize the display  
-  display.init();
-  display.resetDisplay();
-  display.flipScreenVertically();
-  display.displayOn();
-  display.clear();
-  display.drawString(1, 1, "Start");
-  display.display();
+// Initialize the display
+  if (!check_if_exist_I2C(SSD1306_address)) {
+    display.init();
+    display.resetDisplay();
+    display.flipScreenVertically();
+    display.displayOn();
+    display.clear();
+    display.drawString(1, 1, "Start");
+    display.display();
+  }
 
   if (keyPad.begin() == false)
   {
@@ -110,7 +113,6 @@ void setup()
     //ina219.setCalibration_16V_400mA(); // Or to use a lower 16V, 400mA range (higher precision on volts and amps):
     outputinfo("Current sensor OK.\r\n", &display);
   }
-  
   Serial.print("Init finalised\r\n");
 }
 
@@ -150,21 +152,30 @@ void loop()
   if (INA219connected) {
     if(millis()-stop > 500) {
       stop = millis();
-      Screenupdate();
+      WriteINAdata();
     }
   }
 }
 
-void Screenupdate() {
-  char buffer[40];
-  display.clear();
-  display.drawStringf(0, 0, buffer, "Voltage: %.2f V", ina219.getBusVoltage_V());
-  display.drawStringf(0, 10, buffer, "Current: %.2f mA", ina219.getCurrent_mA());
-  display.drawStringf(0, 20, buffer, "Power: %.2f mW", ina219.getPower_mW());
-  display.drawStringf(0, 30, buffer, "Fan: %d rpm", FanSpeed.rpm());
-  display.display();
+void WriteINAdata() {
+  float Voltage = ina219.getBusVoltage_V();
+  float Current = ina219.getCurrent_mA();
+  float Power = ina219.getPower_mW();
+  int16_t Fan = FanSpeed.rpm();
+  if (!check_if_exist_I2C(SSD1306_address)) {
+    char buffer[40];
+    display.clear();
+    display.drawStringf(0, 0, buffer, "Voltage: %.2f V", Voltage);
+    display.drawStringf(0, 10, buffer, "Current: %.2f mA", Current);
+    display.drawStringf(0, 20, buffer, "Power: %.2f mW", Power);
+    display.drawStringf(0, 30, buffer, "Fan: %d rpm", Fan);
+    display.display();
+  }
+  Serial.printf("Voltage: %.2f V\r\n", Voltage);
+  Serial.printf("Current: %.2f mA", Current);
+  Serial.printf("Power: %.2f mW", Power);
+  Serial.printf("Fan: %lf rpm, Fan\r\n", Voltage);
 }
-
 
 void measurePolling(uint32_t speed)
 {
@@ -202,16 +213,13 @@ void measurePolling(uint32_t speed)
   Wire.setClock(I2CSPEED);
 }
 
+
 void check_if_exist_I2C() {
   byte error, address;
   int nDevices {0};
   Serial.print("Device(s) found at address(es) : \r\n");
   for (address = 1; address < 127; address++ )  {
-    // The i2c_scanner uses the return value of
-    // the Write.endTransmisstion to see if
-    // a device did acknowledge to the address.
-    Wire.beginTransmission(address);
-    error = Wire.endTransmission();
+    error = check_if_exist_I2C(address);
     char hexdecimalnum [4]{0,0,0,0};
     itoa(address, hexdecimalnum, 16);
     if (error == 0){
@@ -225,4 +233,11 @@ void check_if_exist_I2C() {
   if (nDevices == 0) Serial.print("No I2C devices found\r\n");
 }
 
+byte check_if_exist_I2C(uint8_t address) {
+    // The i2c_scanner uses the return value of
+    // the Write.endTransmisstion to see if
+    // a device did acknowledge to the address.
+    Wire.beginTransmission(address);
+    return Wire.endTransmission();
+}
 // -- END OF FILE --
